@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<title>hi, i'm eden</title>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/761816f60a.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="nospace" onscroll="navbar()">
+    <div class="parallaxscroll" id="introLonger">
+        <header>
+            <div class="nav">
+                    <div class="underline">
+                        <span><a href="#">h o m e</a></span>
+                        <hr>
+                    </div>
+                    <div class="underline">
+                        <span><a href="#projectlink">p r o j e c t s</a></span>
+                        <hr>
+                    </div>
+                    <div class="underline">
+                        <span><a href="static/chou_eden.pdf" target="_blank">r e s u m e</a></span>
+                        <hr>
+                    </div>
+            </div>
+        </header>
+        <div class="intro">
+            <p class="hiIm">HI, I'M</p>
+            <h1 class="eden" id="textshadow">eden</h1>
+            <p class="introDesc">STUDENT - COMP SCI ENTHUSIAST - FOODIE</p>
+               <div id="scrollDown">
+                <a id="arrowColor" href="#projectlink" class="fas fa-chevron-down" onmouseover="click();"></a>
+                </div>
+<!--
+            <div class="scrollDown">
+                <a class="fas fa-chevron-down"></a>
+            </div>
+-->
+        </div>
+    </div>
+    <div class="parallaxscroll" id="smol">
+        <a id="projectlink"></a>
+        <p class="divTitle">p r o j e c t s</p>
+
+    </div>
+    <a></a>
+    <nav role="navigation">
+        <div class="menuToggle" id="menuToggle">
+            <div class="hov" onmouseover="hov()">
+                <input type="hover" id="hov" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <div class="check" onmouseout="remHov()">
+                    <ul id="menu">
+                        <!--                <input type="hover" id="check">-->
+                        <a href="#">
+                            <li>h o m e</li>
+                        </a>
+                        <a href="#aboutlink">
+                            <li>a b o u t</li>
+                        </a>
+                        <a href="#projectlink">
+                            <li>p r o j e c t s</li>
+                        </a>
+                        <a href="static/chou_eden.pdf" target="_blank">
+                            <li>r e s u m e</li>
+                        </a>
+<!--
+                        <a href="#gallery">
+                            <li>g a l l e r y</li>
+                        </a>
+-->
+                        <a href="#contactlink">
+                            <li>c o n n e c t</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="projects">
+        <div class="section">
+            <p id="noTopMar" class="sectionTitle">WEB DEVELOPMENT</p>
+            <div class="gimmeSpace">
+                <div class="projContainer">
+                    <div class="projPics">
+                        <a href="https://unc.edu" target="_blank">
+                            <img id="aboutImg" class="aboutImg" src="static/mamhomepage.png" height="300" width="375">
+                            <img id="aboutImg" class="aboutImg" src="static/abuotus_mam.png" height="300" width="375">
+                            <img id="aboutImg" class="aboutImg" src="static/mam_admin.png" height="300" width="375">
+                            <img id="aboutImg" class="aboutImg" src="static/calendar_mam.png" height="300" width="375">
+                        </a>
+                        <p class="dates">jan 2019 - may 2020</p>
+                    </div>
+                    <div class="projContent">
+                        <div class="innerProjContent">
+                            <a class="subTitle" href="#" target="_blank">mind above matter</a>
+                            <p class="alignLeft">unc campus organization, computer science + social good, partnered with unc campus organization, mind above matter, to create a responsive mental health website</p>
+                            <div id="uniform">
+                                <ul>
+                                    <li>hosted on a <span><strong>flask</strong></span> environment</li>
+                                    <li><span><strong>python</strong></span> for backend functionality</li>
+                                    <li><span><strong>html</strong></span>/<span><strong>css</strong></span>/<span><strong>javascript</strong></span> for frontend (homepage, about us, calendar, admin page)</li>
+                                    <li><span><strong>sqlalchemy</strong></span> for access and easy manipulation of the database</li>
+                                    <li><span><strong>git</strong></span> to work collaboratively across the site and commit changes</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <a href="https://github.com/unc-cs-sg/MindOverMatter" target="_blank"><img id="aboutImg" src="static/github.webp" height="50" width="50"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="linePt2"></div>
+                <div class="gimmeSpace">
+                    <div class="projContainer"> 
+                        <div class="projPics">
+                            <a href="https://unc.edu" target="_blank">
+                                <img id="aboutImg" src="static/ipilogo.png" height="300" width="300"></a>
+                            <p class="dates">jan 2018 - april 2019</p>
+                        </div>
+                        <div class="projContent">
+                            <div class="innerProjContent">
+                                <a class="subTitle" href="https://www.facebook.com/pages/category/Community-Service/Initiative-on-Poverty-and-Inequality-2337633616249939/" target="_blank">initiative on poverty and inequality</a>
+                                <p class="alignLeft">unc campus organization, computer science + social good, partnered with unc campus organization, initiative on poverty and inequality, to create a responsive website with resources and information regarding inequality and poverty</p>
+                                <div id="uniform">
+                                    <ul>
+                                        <li>hosted on <span id="addColor">wordpress</span> (site is currently inactive)</li>
+                                        <li><span id="addColor">html</span>/<span id="addColor">css</span> for frontend customizations (representatives, events page)</li>
+                                        <li><span id="addColor">google civic information api</span> for easy search access to the representatives in your area</li>
+                                        <li><span id="addColor">google calendar</span> for easy access to upcoming events for ipi</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a href="https://github.com/unc-cs-sg/IPI-Website" target="_blank"><img id="aboutImg" src="static/github.webp" height="50" width="50"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="linePt2"></div>
+                <div class="gimmeSpace">
+                    <div class="projContainer">
+                        <div class="projPics">
+                            <a href="https://unc.edu" target="_blank">
+                                <img id="aboutImg" class="aboutImg2" src="static/ozanamsi.png" height="300" width="375">
+                                <img id="aboutImg" class="aboutImg2" src="static/about_ozanam.png" height="300" width="375">
+                                <img id="aboutImg" class="aboutImg2" src="static/ourwork_ozanam.png" height="300" width="375">
+                                <img id="aboutImg" class="aboutImg2" src="static/products_ozanam.png" height="300" width="375">
+                                <img id="aboutImg" class="aboutImg2" src="static/contact_ozanam.png" height="300" width="375">
+                                <p class="dates">jan 2018 - present</p>
+                            </a>
+                        </div>
+                        <div class="projContent">
+                            <div id="ozanamMove" class="innerProjContent">
+                                <a class="subTitle" href="https://ozanamsi.com" target="_blank">ozanam strategic insights</a>
+                                <p class="aboutInfo">a data collection & analysis startup</p>
+                                <div id="uniform">
+                                    <ul>
+                                        <li>hosted on <span id="addColor">wix</span></li>
+                                        <li><span id="addColor">html</span> for frontend customizations</li>
+                                        <li><span id="addColor">adobe photoshop</span>/<span id="addColor">adobe illustrator</span> to create visuals to model data and statistics</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="linePt2"></div>
+                <div class="gimmeSpace">
+                    <div class="projContainer">
+                        <div class="projPics">
+                            <a href="https://unc.edu" target="_blank">
+                                <img id="aboutImg" class="aboutImg3" src="static/msc.png" height="300" width="375">
+                                <img id="aboutImg" class="aboutImg3" src="static/anklet_msc.png" height="300" width="375">
+                                <img id="aboutImg" class="aboutImg3" src="static/charms_msc.png" height="300" width="375">
+                                <img id="aboutImg" class="aboutImg3" src="static/chokers_msc.png" height="300" width="375"></a>
+                            <p class="dates">dec 2014 - jan 2017</p>
+                        </div>
+                        <div class="projContent">
+                            <div id="mscMove" class="innerProjContent">
+                                <a class="subTitle" href="http://mysimplecloset.storenvy.com" target="_blank">mysimplecloset</a>
+                                <p class="aboutInfo">sole proprietor of an online boutique specializing in accessories, tees, and stickers</p>
+                                <div id="uniform">
+                                    <ul>
+                                        <li>hosted on <span id="addColor">storeenvy</span></li>
+                                        <li><span id="addColor">html/css</span> for frontend customizations</li>
+                                        <li><span id="addColor">adobe photoshop</span>/<span id="addColor">adobe illustrator</span> for editing graphics and pictorials</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line" id="extraPad"></div>
+                <p class="sectionTitle">GRAPHIC DESIGN</p>
+                <div class="gimmeSpace">
+                    <div class="projContainer">
+                        <div class="projPics">
+                            <a href="ozanam factsheet.png" target="_blank">
+                                <img id="aboutImg" src="static/faxs.png" height="350"></a>
+                            <p class="dates">february 2020</p>
+                        </div>
+                        <div class="projContent">
+                            <div id="faxsheet" class="ozinnerProjContent">
+                                <a class="subTitle" href="ozanam factsheet.png" target="_blank">ozanam strategic insights factsheet</a>
+                                <p class="aboutInfo">a succinct factsheet displaying key points about ozanam strategic insights</p>
+                                <div id="uniform">
+                                    <ul>
+                                        <li><span id="addColor">adobe photoshop</span> for editing and creating graphics and pictorials</li>
+                                        <li><span id="addColor">adobe illustrator</span> for creating the layout and integrating the graphics and text</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallaxscroll" id="smol">
+        <a id="aboutlink"></a>
+        <p class="divTitle">a b o u t</p>
+    </div>
+    <div class="parallaxscroll">
+        <div class="wrap">
+
+            <div class="leftHeadshot">
+            </div>
+            <div class="about">
+                <div class="section">
+                    <div>
+                        <p id="noTopMar" class="sectionTitle">STUDENT</p>
+                        <div class="student">
+                            <div class="aboutContainer">
+                                <div class="pic">
+                                    <a href="https://unc.edu" target="_blank">
+                                        <img id="aboutImg" src="static/oldwell_unc.png" height="150" width="150"></a>
+                                </div>
+                                <div class="words3">
+                                    <a class="subTitle" href="http://unc.edu" target="_blank">university of north carolina at chapel hill</a>
+                                    <p class="aboutInfo">computer science - statistics and analytics - chinese</p>
+                                </div>
+                            </div>
+                            <div class="aboutContainer">
+                                <div class="pic">
+                                    <a href="https://rewritingthecode.org" target="_blank">
+                                        <img id="aboutImg" src="static/rtc_square.jpeg" height="150" width="150"></a>
+                                </div>
+                                <div class="wordsRtc">
+                                    <a class="subTitle" href="http://rewritingthecode.org" target="_blank">rewriting the code fellow</a>
+                                    <p class="alignLeft">a wonderful program that's enabled me to not only enrich my learning experience but also let me to connect with like-minded, driven, and diverse women in stem!</p>
+                                </div>
+                            </div>
+                            <div class="aboutContainer">
+                                <div class="pic">
+                                    <a href="https://ccps.unc.edu/bpss" target="_blank">
+                                        <img id="aboutImg" src="static/bpss.jpg" height="150" width="150"></a>
+                                </div>
+                                <div class="words">
+                                    <a class="subTitle" href="http://ccps.unc.edu/bpss" target="_blank">buckley public service scholar</a>
+                                    <p class="alignLeft">avid volunteer&mdash;my favorite place to volunteer at is the <span>north carolina museum of natural sciences</span>!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div>
+                        <p class="sectionTitle">COMP SCI ENTHUSIAST</p>
+                        <p class="enthusiast">my journey from <span id="addColor">coding!=life</span> to <span id="addColor">coding==life</span></p>
+                        <div class="enthu">
+                            <p class="notCenter">my first encounter with coding was not the best. in fact, i disliked it so much i was adamant on never doing it again. i couldn't grasp the meaning of the seemingly pointless divs or the random concatenation of letters, like how was i supposed to know what p or li meant? however despite the monumental initial frustration, with a push in the right direction years down the line, (thank you dad!!) i fell in love with coding freshman year during my first ever coding class&mdash;intro to programming.</p>
+                        </div>
+                        <p class="subTitle">my future aspirations</p>
+                        <div class="list">
+                            <ul>
+                                <li>full stack web development</li>
+                                <li>software engineering</li>
+                                <li>data analysis</li>
+                                <li>ui/ux</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+
+                    <div>
+                        <p class="sectionTitle">FOODIE</p>
+                        <p class="subTitle">when i'm not coding, i'm eating</p>
+                        <p class="aboutInfo">the one thing i'd never be able to part with is boba. these are hands down the best 5 boba shops!</p>
+                        <div class="top5">
+                            <div class="aboutContainer">
+                                <div class="pic2">
+                                    <a href="https://gongchausa.com" target="_blank">
+                                        <img id="aboutImg" src="static/gongcha.png" height="150" width="150"></a>
+                                </div>
+                                <div class="words2">
+                                    <p class="subTitle">gong cha</p>
+                                    <p class="aboutInfo2">the flavor is immaculate</p>
+                                </div>
+                            </div>
+                            <div class="aboutContainer">
+                                <div class="pic2">
+                                    <a href="https://meetfresh.us" target="_blank">
+                                        <img id="aboutImg" src="static/meetfresh.jpg" height="150" width="150"></a>
+                                </div>
+                                <div class="words2">
+                                    <p class="subTitle">meet fresh</p>
+                                    <p class="aboutInfo2">the best traditional taiwanese shaved ice & boba</p>
+                                </div>
+                            </div>
+                            <div class="aboutContainer">
+                                <div class="pic2">
+                                    <a href="https://chahouseusa.com" target="_blank">
+                                        <img id="aboutImg" src="static/chahouse.jpg" height="150" width="150"></a>
+                                </div>
+                                <div class="words2">
+                                    <p class="subTitle">cha house</p>
+                                    <p class="aboutInfo2">the <strong>only</strong> boba shop to go to if you're at unc</p>
+                                </div>
+                            </div>
+                            <div class="aboutContainer">
+                                <div class="pic2">
+                                    <a href="https://bobaguys.com" target="_blank">
+                                        <img id="aboutImg" src="static/bobaguys.jpeg" height="150" width="150"></a>
+                                </div>
+                                <div class="words2">
+                                    <p class="subTitle">boba guys</p>
+                                    <p class="aboutInfo2">the only caveat&mdash;it's too far away :(</p>
+                                </div>
+                            </div>
+                            <div class="aboutContainer">
+                                <div class="pic2">
+                                    <a href="https://kungfutea.com" target="_blank">
+                                        <img id="aboutImg" src="static/kungfutea.png" height="150" width="150"></a>
+                                </div>
+                                <div class="words2">
+                                    <p class="subTitle">kungfu tea</p>
+                                    <p class="aboutInfo2">the fruity drinks here are a1</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <div class="parallaxscroll" id="smol">
+        <a id="gallery"></a>
+        <p class="divTitle">m y &nbsp; j o u r n e y</p>
+    </div>
+-->
+
+    <!--
+    <div class="parallaxscrollLonger">
+        
+        <div class="container">
+            <div id="photo" class="gridItem">
+                <img src="static/headshot.jpg">
+            </div>
+            <div id="photo"class="gridItem">
+                <img src="static/IMG_5699%202.JPG" style="height:auto">
+            </div>
+            <div id="photo"class="gridItem">
+                <img src="static/IMG_5862.jpg">
+            </div>
+            <div id="photo"class="gridItem">
+                <img src="static/IMG_1970.jpg">
+            </div>
+            <div id="photo"class="gridItem">
+                <img src="static/headshot.jpg">
+            </div>
+        </div>
+-->
+
+    </div>
+    <div class="parallaxscroll" id="contact">
+        <a id="contactlink"></a>
+        <p class="divTitle">l e t ' s &nbsp;&nbsp; t a l k</p>
+        <div class="section">
+            <a id="icon" href="http://linkedin.com/in/edenchou" target="_blank" class="fab fa-linkedin"></a>
+            <a id="icon" href="mailto:eden.chou0606@gmail.com" target="_blank" class="far fa-envelope"></a>
+            <a id="icon" href="https://www.facebook.com/profile.php?id=100004423399325" target="_blank" class="fab fa-facebook-square"></a>
+        </div>
+    </div>
+
+    <script>
+        function navbar() {
+            if (window.pageYOffset > 500) {
+                var x = document.getElementById("menuToggle");
+                x.style.display = "block";
+
+            } else {
+                var x = document.getElementById("menuToggle");
+                x.style.display = "none";
+            }
+
+
+
+            if (window.pageYOffset > 1050) {
+                var nav = document.getElementById("menuToggle");
+                nav.style.position = "fixed";
+            } else {
+                var nav = document.getElementById("menuToggle");
+                nav.style.position = "relative";
+            }
+        }
+    </script>
+    <script>
+        function hov() {
+            var hov = document.getElementById("menu").style.transform = "none";
+            console.log("hi");
+
+        }
+
+        function remHov() {
+            var remHov = document.getElementById("menu").style.transform = "";
+        }
+    </script>
+    <script>
+        var slideIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("aboutImg");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {
+                slideIndex = 1
+            }
+            x[slideIndex - 1].style.display = "inline-block";
+            setTimeout(carousel, 3000); // Change image every 2 seconds
+        }
+    </script>
+    <script>
+        var slideIndex2 = 0;
+        carousel2();
+
+        function carousel2() {
+            var i;
+            var x2 = document.getElementsByClassName("aboutImg2");
+            for (i = 0; i < x2.length; i++) {
+                x2[i].style.display = "none";
+            }
+            slideIndex2++;
+            if (slideIndex2 > x2.length) {
+                slideIndex2 = 1
+            }
+            x2[slideIndex2 - 1].style.display = "inline-block";
+            setTimeout(carousel2, 3000); // Change image every 2 seconds
+        }
+    </script>
+    <script>
+        var slideIndex3 = 0;
+        carousel3();
+
+        function carousel3() {
+            var i;
+            var x3 = document.getElementsByClassName("aboutImg3");
+            for (i = 0; i < x3.length; i++) {
+                x3[i].style.display = "none";
+            }
+            slideIndex3++;
+            if (slideIndex3 > x3.length) {
+                slideIndex3 = 1
+            }
+            x3[slideIndex3 - 1].style.display = "inline-block";
+            setTimeout(carousel3, 3000); // Change image every 2 seconds
+        }
+    </script>
+</body></html>
+
+<!--
+    <div>
+        <div class="aboutScrolls" id="aboutSection">
+            <a id="aboutlink"></a>
+            <div>
+                <div class="headshot"></div>
+                <div class="section">
+                    <div>
+                        <p id="noTopMar" class="sectionTitle">STUDENT</p>
+                        <div class="student">
+                            <p class="subTitle">university of north carolina at chapel hill</p>
+                            <p>computer science - statistics and analytics - chinese</p>
+                            <p class="subTitle">rewriting the code fellow</p>
+                            <p>a wonderful program that's enabled me to not only enrich my learning experience but also for me to connect with like-minded, driven, and diverse women in stem!</p>
+                            <p class="subTitle">buckley public service scholar</p>
+                            <p>avid volunteer&mdash;my favorite place to volunteer at is the <span>north carolina museum of natural sciences</span>!</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="sectionTitle">COMP SCI ENTHUSIAST</p>
+                        <p class="enthusiast">my journey from <span id="addColor">coding!=life</span> to <span id="addColor">coding==life</span></p>
+                        <p>my first encounter with coding was not the best. in fact, i disliked it so much i was adamant on never doing it again. what was the point of all the less than or equal signs? i was frustrated beyond belief with the syntax it was easier to leave it alone than pursue. my first exposure to coding started with food believe it or not. i wanted money to fuel my boba addiction, and as a 14 year old the only way i saw through this problem was creating an online shop. throughout all this, i truly thank an appreciate my dad because he's the one who started me on this journey&mdash;without him i simply wouldn't have found something i love.</p>
+                    </div>
+                    <div>
+                        <p class="sectionTitle">FOODIE</p>
+                        <p class="foodie">i. love. food. need i say more?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+<!--
+    <div class="parallaxscroll">
+        <div class="pscrollborderleft">
+        </div>
+    </div>
+
+    <div class="parallaxscroll">
+    </div>
+    <div class="parallaxscroll">
+    </div>
+
+    <div class="parallaxscroll">
+
+        <div class="outlinescroll">
+        </div>
+    </div>
+-->
+
+
+<!--
+    <div class="parallaxscroll">
+        <div class="invertedscroll">
+        </div>
+        <div class="pscrollborderright"></div>
+    </div>
+-->

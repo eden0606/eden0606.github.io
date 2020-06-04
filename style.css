@@ -1,0 +1,754 @@
+body,
+html {
+    /* background-color: lightblue; */
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2 {
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+    line-height: 3em;
+    /* 2em is two times the size of the current font */
+}
+
+h2 {
+    font-size: 30pt;
+}
+
+.hiIm {
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    font-size: 40pt;
+}
+
+.eden {
+    padding: 5px;
+    margin: 0px;
+    font-size: 150pt;
+    line-height: 1em;
+}
+
+.introDesc {
+    padding: 0px;
+    margin: 0px;
+    color: white;
+
+}
+
+#scrollDown {
+    color: white;
+    font-size: 30pt;
+    padding-top: 195px;
+}
+
+#arrowColor {
+    color: white;
+    text-shadow: 2px 2px 3px black;
+}
+
+#textshadow {
+    text-shadow: 2px 2px 3px black;
+}
+
+header {
+    width: 100%;
+}
+
+.nospace {
+    margin: 0;
+    padding: 0;
+}
+
+.intro {
+    text-align: center;
+    justify-content: center;
+    padding-top: 115px;
+    z-index: auto;
+}
+
+.titles {
+    font-size: 60pt;
+    padding: 30px;
+    margin: 0px;
+    text-align: center;
+    color: black;
+}
+
+#smol {
+    height: 30%;
+}
+
+#contact {
+    height: 70%;
+}
+
+.divTitle {
+    font-size: 50pt;
+    text-align: center;
+    padding: 84px;
+    color: white;
+    margin: 0px;
+}
+
+.testhe {
+    height: 50vh;
+    background-color: lavender;
+}
+
+.parallaxscroll {
+    font-family: 'Raleway', sans-serif;
+    background-image: url('static/mountains.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+.parallaxscrollLonger {
+    font-family: 'Raleway', sans-serif;
+    background-image: url('static/mountains.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    width: 100vw;
+
+}
+
+#longerImg {}
+
+.test {
+    background-color: purple;
+}
+
+#baseSection {
+    height: 100vh;
+    width: 100vw;
+}
+
+.wrap {
+    display: flex;
+}
+
+.aboutImg {
+    display: none;
+}
+
+.about {
+    background: white;
+    flex-basis: 66%;
+    height: 100vh;
+    overflow: auto;
+}
+
+.leftHeadshot {
+    background-image: url('static/headshot.jpg');
+    background-size: cover;
+    flex-basis: 44%;
+}
+
+.student {
+    padding-bottom: 15px;
+}
+
+.enthu {
+    width: 86%;
+    display: inline-block;
+
+}
+
+.subTitle {
+    color: lightcoral;
+    font-size: 20pt;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.aboutInfo {
+    margin-top: 6px;
+}
+
+#icon {
+    color: white;
+    font-size: 55pt;
+    padding: 100px;
+    padding-top: 0px;
+    text-align: center;
+    transition: all .2s ease-in-out;
+}
+
+#icon:hover {
+    transform: scale(1.2);
+}
+
+a {
+    color: lightcoral;
+    text-decoration: none;
+}
+
+a:visited {
+    color: lightcoral;
+    text-shadow: 2px 2px 3px black;
+}
+
+a:hover {
+    color: pink;
+}
+
+.section {
+    padding: 40px;
+    text-align: center;
+}
+
+.sectionTitle {
+    font-size: 25pt;
+    margin-bottom: 5px;
+
+}
+
+.outlinescroll {
+    height: 93.5%;
+    width: auto;
+    background-color: transparent;
+    border: 15px solid lavenderblush;
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.pscrollborderleft {
+    width: 46%;
+    height: 91%;
+    border: 15px solid lavenderblush;
+    position: relative;
+    top: 24px;
+    left: 20px;
+}
+
+.line {
+
+    width: 60%;
+    height: 75px;
+    margin-top: 0px;
+    border-bottom: 1px solid lightcoral;
+    margin: -50px auto 40px;
+
+}
+
+.linePt2 {
+    width: 60%;
+    height: 75px;
+    margin-top: 0px;
+    border-bottom: 1px solid lightcoral;
+    margin: -50px auto 40px;
+    padding-top: 40px;
+}
+
+.pscrollborderright {
+    width: 48.6%;
+    height: 100vh;
+    border: 15px solid lavenderblush;
+    position: relative;
+    float: left;
+}
+
+.invertedscroll {
+    height: 100vh;
+    width: 48%;
+    background-color: lavenderblush;
+    float: left;
+}
+
+.longerImg {
+    height: auto;
+}
+
+/*
+.container {
+    column-count: 4;
+    column-gap: 1em;
+}
+
+.tile {
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
+}
+*/
+
+.container {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.container:before {
+    content: '';
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+}
+
+.gridItem:first-child {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+}
+
+/**
+  every 3rd item takes up 2 blocks horizontally (2 x 1)
+**/
+.gridItem:nth-child(3n) {
+    grid-row: span 2;
+}
+
+/**
+  every 4th and 7th item takes up only 1 block (1 x 1),
+  to overwrite the previous 3n rule
+**/
+.gridItem:nth-child(4n),
+.gridItem:nth-child(7n) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/**
+  every 5th item takes up 2 blocks vertically (1 x 2),
+  also every 15th block will be a big one (2 x 2)
+**/
+.gridItem:nth-child(5n) {
+    grid-column: span 2;
+}
+
+.gridItem {
+    position: relative;
+}
+
+.photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*
+.container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1rem;
+    background: transparent;
+    height: auto;
+    background-clip: content-box;
+    width: 100%;
+}
+
+.tile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tile {
+    border: 0px;
+    margin: 0px;
+}
+
+.tile:nth-child(1){
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+.tile:nth-child(2),
+.tile:nth-child(3){
+    grid-column: span 2;
+}
+
+.tile:nth-child(4),
+.tile:nth-child(5){
+    grid-column: span 3;
+}
+*/
+
+.nextToEachOther {
+    overflow: auto;
+}
+
+#noTopMar {
+    margin-top: 0px;
+}
+
+.enthusiast {
+    font-size: 20pt;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.notCenter {
+    text-align: justify;
+    text-indent: 50px;
+}
+
+#addColor {
+    color: lightcoral;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+hr {
+    width: 180px;
+    border: none;
+    background-color: lightcoral;
+    color: lightcoral;
+    height: 1px;
+    border-top: 4px solid lightcoral;
+    display: none;
+}
+
+span:hover + hr {
+    display: block;
+}
+
+nav {
+    margin: 0px;
+    background: transparent;
+    height: 0px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+    font-size: 18pt;
+    padding-bottom: 7px;
+    padding-top: 0px;
+}
+
+.underline {
+    padding-top: 75px;
+    padding-bottom: 10px;
+    width: 315px;
+    text-align: center;
+}
+
+.list {
+    text-align: left;
+    display: inline-block;
+}
+
+#extraPad {
+    padding-top: 20px;
+}
+
+.gimmeSpace {
+    padding-top: 30px;
+}
+
+#uniform {
+    text-align: left;
+    display: inline-block;
+    width: 532px;
+
+}
+
+.aboutContainer {
+    height: 180px;
+    display: flex;
+}
+
+.projContainer {
+    display: flex;
+}
+
+.alignLeft {
+    text-align: justify;
+    margin-top: 6px;
+}
+
+.aboutInfo2 {
+    text-align: center;
+}
+
+.innerProjContent {
+    width: 675px;
+    padding-top: 12px;
+}
+
+.ozinnerProjContent {
+    width: 600px;
+    padding-top: 12px;
+}
+
+.aboutImg2 {
+    display: none;
+}
+
+.aboutImg3 {
+    display: none;
+}
+
+#ozanamMove {
+    padding-top: 55px;
+}
+
+#mscMove {
+    padding-top: 50px;
+}
+
+#faxsheet {
+    padding-top: 70px;
+}
+
+.dates {
+    color: lightcoral;
+}
+
+.projPics {
+    flex-basis: 45%;
+    text-align: center;
+    justify-content: center;
+}
+
+.projContent {
+    flex-basis: 60%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.wordsRtc {
+    padding: 33px;
+    flex-basis: 74.5%;
+}
+
+.pic {
+    flex-basis: 30%;
+}
+
+.words {
+    flex-basis: 70%;
+    padding: 50px;
+}
+
+.words3 {
+    flex-basis: 70%;
+    padding: 50px;
+    padding-top: 55px;
+
+}
+
+.words2 {
+    flex-basis: 60%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.pic2 {
+    flex-basis: 40%;
+}
+
+#aboutImg {
+    padding-top: 25px;
+    transition: all .2s ease-in-out;
+}
+
+#aboutImg:hover {
+    transform: scale(1.1);
+}
+
+
+#menuToggle,
+.menuToggle {
+    display: none;
+    position: relative;
+    top: 50px;
+    left: 50px;
+
+    z-index: 1;
+
+    -webkit-user-select: none;
+    user-select: none;
+    width: 0px;
+}
+
+#menuToggle a {
+    text-decoration: none;
+    color: lightcoral;
+    text-shadow: 1px 1px 1px gray;
+    font-weight: 900;
+    transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+    color: pink;
+}
+
+.check {
+    width: 125px;
+    height: 305px;
+}
+
+#menuToggle input {
+    display: block;
+    width: 42px;
+    height: 30px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    cursor: pointer;
+
+    opacity: 0;
+    /* hide this */
+    z-index: 2;
+    /* and place it over the hamburger */
+
+    -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+
+
+#menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: white;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px black;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:hover ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: white;
+    box-shadow: 1px 1px 3px black;
+}
+
+#menuToggle input:hover ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: white;
+    box-shadow: 1px 1px 3px black;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:hover ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:hover ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+    position: absolute;
+    width: 130px;
+    margin: -80px 0 0 -50px;
+    padding-left: 48px;
+    padding-top: 110px;
+    overflow: hidden;
+
+    background: transparent;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+
+/*
+.hov:hover + #menuToggle ~ ul {
+    transform: none;
+}
+*/
+
+.addHover {
+    transform: none;
+}
+
+/*
+#menuToggle .input:hover + #menu {
+    transform: none;
+}
+*/
+
+/*
+.check:hover {
+    transform: none;
+}
+
+.hover:hover + .check {
+    transform: none;
+}
+*/
