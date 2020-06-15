@@ -470,8 +470,9 @@ nav {
 
 #uniform {
     text-align: left;
+    position: relative;
     display: inline-block;
-    width: 532px;
+    margin-top: 6px;
 
 }
 
@@ -566,12 +567,83 @@ nav {
     padding-bottom: 50px;
 }
 
+.spaceBRUH {
+    position: relative;
+    padding: 25px;
+}
+
+.projectImg {
+    display: flex;
+    justify-content: center;
+}
+
+#projTitle {
+    font-size: 25px;
+    padding-bottom: 0px;
+}
+
+.projLine {
+    width: 70%;
+    height: 40px;
+    margin-top: 0px;
+    border-bottom: 1px solid white;
+    margin: -50px auto 10px;
+}
+
+.projInfo {
+    width: 444px;
+    height: 274px;
+    position: absolute;
+    opacity: 0;
+    bottom: 29px;
+    right: 25px;
+    background: rgba(240, 128, 128, 0.8);
+    color: white;
+    -webkit-transition: .4s ease-in-out opacity;
+    -moz-transition: .4s ease-in-out opacity;
+    -o-transition: .4s ease-in-out opacity;
+    transition: .4s ease-in-out opacity;
+    
+}
+
+.projInfo:hover {
+    opacity: 1;
+    -webkit-transition: .4s ease-in-out opacity;
+    -moz-transition: .4s ease-in-out opacity;
+    -o-transition: .4s ease-in-out opacity;
+    transition: .4s ease-in-out opacity;
+}
+
+.projInfoGD {
+    width: 271px;
+    height: 350px;
+    position: absolute;
+    opacity: 0;
+    bottom: 29px;
+    right: 25px;
+    background: rgba(240, 128, 128, 0.8);
+    color: white;
+    -webkit-transition: .4s ease-in-out opacity;
+    -moz-transition: .4s ease-in-out opacity;
+    -o-transition: .4s ease-in-out opacity;
+    transition: .4s ease-in-out opacity;
+    
+}
+
+.projInfoGD:hover {
+    opacity: 1;
+    -webkit-transition: .4s ease-in-out opacity;
+    -moz-transition: .4s ease-in-out opacity;
+    -o-transition: .4s ease-in-out opacity;
+    transition: .4s ease-in-out opacity;
+}
+
 .pic2 {
     flex-basis: 40%;
 }
 
 #aboutImg {
-    padding-top: 25px;
+    padding: 25px;
     transition: all .2s ease-in-out;
 }
 
@@ -722,33 +794,3 @@ nav {
     padding: 10px 0;
     font-size: 22px;
 }
-
-/*
- * And let's slide it in from the left
- */
-
-/*
-.hov:hover + #menuToggle ~ ul {
-    transform: none;
-}
-*/
-
-.addHover {
-    transform: none;
-}
-
-/*
-#menuToggle .input:hover + #menu {
-    transform: none;
-}
-*/
-
-/*
-.check:hover {
-    transform: none;
-}
-
-.hover:hover + .check {
-    transform: none;
-}
-*/
