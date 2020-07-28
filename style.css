@@ -33,7 +33,7 @@ h2 {
 }
 
 .eden {
-    padding: 5px;
+    padding: 0.5%;
     margin: 0px;
     font-size: 150pt;
     line-height: 1em;
@@ -49,7 +49,7 @@ h2 {
 #scrollDown {
     color: white;
     font-size: 30pt;
-    padding-top: 165px;
+    padding-top: 12%;
 }
 
 #arrowColor {
@@ -73,10 +73,11 @@ header {
 .intro {
     text-align: center;
     justify-content: center;
-    padding-top: 115px;
+    padding-top: 10%;
     z-index: auto;
 }
 
+/*
 .titles {
     font-size: 60pt;
     padding: 30px;
@@ -84,6 +85,7 @@ header {
     text-align: center;
     color: black;
 }
+*/
 
 #smol {
     height: 30%;
@@ -94,9 +96,9 @@ header {
 }
 
 .divTitle {
-    font-size: 50pt;
+    font-size: 450%;
     text-align: center;
-    padding: 84px;
+    padding: 6%;
     color: white;
     margin: 0px;
 }
@@ -130,8 +132,6 @@ header {
 
 }
 
-#longerImg {}
-
 .test {
     background-color: purple;
 }
@@ -163,7 +163,7 @@ header {
 }
 
 .student {
-    padding-bottom: 15px;
+    padding-bottom: 2%;
 }
 
 .enthu {
@@ -186,8 +186,8 @@ header {
 #icon {
     color: white;
     font-size: 55pt;
-    padding: 100px;
-    padding-top: 0px;
+    padding: 8%;
+    padding-top: 0%;
     text-align: center;
     transition: all .2s ease-in-out;
 }
