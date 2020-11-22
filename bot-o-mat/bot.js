@@ -17,11 +17,13 @@ export default class Bot {
     // starts list of tasks
     async startTasks() {
         let alteredName = this.name.replace(/\s/g, '-');
-        while (this.taskList.length !== 0) {
+        while (this.taskList.length !== 0 && this.taskList[0] !== undefined) {
             await completingTasks(this.taskList[0].eta);
+            console.log(this.taskList[0]);
 
             // checks if task type is their type to get credit
-            if (this.taskList[0].type == undefined || this.taskList[0].type == this.type) {
+            console.log("yuh " + this.taskList[0].hasOwnProperty('type'));
+            if (!this.taskList[0].hasOwnProperty('type') || this.taskList[0].type == this.type) {
                 this.completedTaskCount++;
                 this.tasksCompleted = this.tasksCompleted.concat(this.taskList[0].description)
                 this.tasksCompleted = this.tasksCompleted.concat(", ");

@@ -21,8 +21,7 @@ export default class BotController {
 
                 // determines if bot name is only letters 
                 let onlyLetNum = nameFormat(botName);
-                console.log(onlyLetNum)
-                console.log(botName)
+                
                 if (botName == "") {
                     alert("please enter a bot name! it cannot be empty.");
                 } else if (!onlyLetNum) {
@@ -79,9 +78,12 @@ export default class BotController {
                 alert('eta cannot be empty & must be a number!')
             } else {
                 for (let i = 0; i < assignArr.length; i++) {
+                    let prevLength = assignArr[i].taskList.length;
                     assignArr[i].taskList.push(newTask);
                     $(`#${alteredName}-dialogue`).text(`starting tasks...`);
-                    assignArr[i].startTasks();
+                    if (prevLength == 0) {
+                        assignArr[i].startTasks();
+                    }
                 }
                 $('.create-a-task').css({'display': 'none'});
                 $('#create-a-task input').val('');
