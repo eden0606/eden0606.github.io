@@ -1,0 +1,24 @@
+{
+  "name": "bot-o-mat-eden0606",
+  "version": "1.0.0",
+  "description": "Use any language to complete this challenge. The implementation is up to you: it can be a command-line application or have a graphical interface.",
+  "main": "bot-tasks.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedVentures22/bot-o-mat-eden0606.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RedVentures22/bot-o-mat-eden0606/issues"
+  },
+  "homepage": "https://github.com/RedVentures22/bot-o-mat-eden0606#readme",
+  "dependencies": {
+    "bulma": "^0.9.1",
+    "jquery": "^3.5.1"
+  }
+}

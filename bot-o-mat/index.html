@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOT-O-MAT</title>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/761816f60a.js" crossorigin="anonymous"></script>
+
+
+    <!-- js files -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bot-tasks.js"></script>
+    <script src="bot-tasks.js" type="module"></script>
+    <script src="bot.js" type="module"></script>
+    <script src="view.js" type="module"></script>
+    <script src="controller.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div class="box leaderboard">
+            <i class="fas fa-robot leaderboard-icon"></i>
+            <h1 class="title leaderboard-title">
+                leaderboard
+            </h1>
+            <button id="refresh-leaderboard" class="button is-light blue-button">refresh for updated ranking!</button>
+            <div class="bot-stats"></div>
+        </div>
+        <div class="title-box">
+            <div><span id="bot-o-mat-title" class="title is-1">BOT<span class="blue-color">-</span>O<span
+                        class="blue-color">-</span>MAT</span></div>
+            <div>
+                <i class="fas fa-robot title-icon"></i>
+            </div>
+            <p class="subtitle is-5"><em>a one stop shop for all your need<span class="blue-color">-</span>to<span
+                        class="blue-color">-</span>dos!</em></p>
+        </div>
+        <div class="border-box">
+            <hr class="blue-border">
+        </div>
+        <div class="level">
+            <div class="level-item">
+                <button id="create-button" class="button is-light is-large spacing blue-button">create a bot!</button>
+            </div>
+            <div class="level-item">
+                <button id="create-task" class="button is-light is-large spacing blue-button">create a task!</button>
+            </div>
+        </div>
+    </div>
+    <div class="form-container">
+        <div id="create-a-bot" class="box create-a-bot spacing">
+            <button class="delete"></button>
+            <h1 class="title is-4">create<span class="blue-color">-</span>a<span class="blue-color">-</span>bot</h1>
+            <div class="form-holder">
+                <div id="form">
+                    <div class="field">
+                        <label class="label">bot name</label>
+                        <div class="control">
+                            <input class="input bot-name" type="text" placeholder="bot name">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">bot type</label>
+                        <div class="control">
+                            <div class="select bot-type">
+                                <select>
+                                    <option>unipedal</option>
+                                    <option>bipedal</option>
+                                    <option>quadrupedal</option>
+                                    <option>arachnid</option>
+                                    <option>radial</option>
+                                    <option>aeronautical</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class=level>
+                <div class="level-item">
+                    <button id="add-button" class="button is-light spacing">add more</button>
+                </div>
+                <div class=level-item>
+                    <button id="submit-bot" class="button is-light spacing" type="submit">create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-container">
+        <div id="create-a-task" class="box create-a-task spacing">
+            <button class="delete"></button>
+            <h1 class="title is-4">create<span class="blue-color">-</span>a<span class="blue-color">-</span>task</h1>
+            <div class="form-holder-task">
+                <div id="form">
+                    <div class="field">
+                        <label class="label">assign to</label>
+                        <div class="control">
+                            <input class="input task-bot-name" type="text" placeholder="bot name">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">description</label>
+                        <div class="control">
+                            <input class="input task-description" type="text" placeholder="description">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">eta</label>
+                        <div class="control">
+                            <input class="input task-eta" type="text" placeholder="eta">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">type</label>
+                        <div class="control">
+                            <div class="select task-type">
+                                <select id="task-type">
+                                    <option></option>
+                                    <option>unipedal</option>
+                                    <option>bipedal</option>
+                                    <option>quadrupedal</option>
+                                    <option>arachnid</option>
+                                    <option>radial</option>
+                                    <option>aeronautical</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=level>
+                <div class=level-item>
+                    <button id="submit-task" class="button is-light spacing" type="submit">create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bot-space"></div>
+    </div>
+</body>
+
+</html>
