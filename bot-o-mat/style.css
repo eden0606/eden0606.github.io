@@ -1,0 +1,141 @@
+.title-box {
+    text-align: center;
+    padding-top: 15px;
+    margin: 15px;
+}
+
+.title-icon {
+    color: #9ecadd; 
+    padding: 10px;
+    font-size: 20px;
+}
+
+.spacing {
+    margin: 15px;
+}
+
+.create-a-bot {
+    display: none;
+    width: 30vw;
+    margin: auto;
+}
+
+.create-a-task {
+    display: none;
+    width: 30vw;
+    margin: auto;
+}
+
+.form-container {
+    width: 72.5vw;
+}
+
+.control {
+    clear: none;
+}
+
+.delete {
+    background-color: #9ecadd;
+}
+
+.border-box {
+    width: 100vw;
+    padding: 20px;
+}
+
+.blue-color {
+    color: #9ecadd;
+}
+
+.blue-border {
+    border-top: #9ecadd dashed 5px;
+    width: 40vw;
+    text-align: center;
+    margin: auto;
+    background-color: transparent;
+}
+
+.button.is-light {
+    background-color: #9ecadd;
+}
+
+.bot-o-mat-title {
+    margin: 0px;
+    padding: 30px;
+}
+
+.bot-icon {
+    font-size: 60px;
+}
+
+.bot-icon-div {
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    position: relative;
+}
+
+.bot-icon-name {
+    padding: 10px;
+    padding-bottom: 0px;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+
+.bot-space {
+    width: 70vw;
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+
+}
+
+.leaderboard {
+    width: 25vw;
+    float: right;
+    margin: 15px;
+    margin-top: 25px;
+    text-align: center;
+    max-height: 51vw;
+    overflow: scroll;
+}
+
+.leaderboard-title {
+    margin-bottom: 0px;
+}
+
+.leaderboard-icon {
+    color: #9ecadd;
+    font-size: 40px;
+    padding-bottom: 5px;
+}
+
+.leaderboard-slot {
+    padding: 10px;
+    display: flex;
+    border-bottom: #9ecadd dashed 2px;
+}
+
+.leaderboard-count {
+    width: 80px;
+    height: 80px;
+    float: left;
+    transform: translate(0%, 50%);
+}
+
+.leaderboard-number {
+    font-size: 30px;
+}
+
+.leaderboard-content {
+    padding-left: 20px;
+    text-align: left;
+}
+
+.delete {
+    float: right;
+}
+
+#leaderboard-name {
+    margin: .5em;
+}
