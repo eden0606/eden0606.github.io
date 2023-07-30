@@ -1,0 +1,16 @@
+.wrapper {
+    width: 120px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.wrapper:hover {
+    cursor: pointer;
+}
+
+.appName {
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
+}

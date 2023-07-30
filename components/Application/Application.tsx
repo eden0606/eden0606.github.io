@@ -1,15 +1,36 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
+import Image from 'next/image';
+import styles from './application.module.css';
 
 interface ApplicationProps {
   appName: string;
+  img: {
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
+  };
+
 }
 
-const Application: FunctionComponent<ApplicationProps> = ({ appName }) => {
-  const ye = 'sd';
+const Application: FunctionComponent<ApplicationProps> = ({ 
+  appName,
+  img,
+ }) => {
+
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
   return (
-    <div>
-      <div>icon</div>
-      <div>{appName}</div>
+    <div className={styles.wrapper}>
+      <div>
+        <Image 
+        src={img.src}
+        alt={img.alt}
+        width={img.width ?? 50}
+        height={img.height ?? 50}
+        />
+      </div>
+      <p className={styles.appName}>{appName}</p>
     </div>
   );
 };
