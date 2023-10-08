@@ -1,14 +1,21 @@
+/* eslint-disable react/no-children-prop */
 'use client';
 
 import Application from '@/components/Application/Application';
 import Footer from '@/components/Footer/Footer';
 import Window from '@/components/Window/Window';
+import generateDraggableElement from '@/util/generateDraggableElement';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import styles from './page.module.css';
+import Projects from '@/components/Projects/Projects';
 
 export default function Home() {
   const [isProjectVisible, setIsProjectVisible] = useState(false);
+  const [isResumeVisible, setIsResumeVisible] = useState(false);
+  const [isComputerVisible, setIsComputerVisible] = useState(false);
+  const [isRecycleVisible, setIsRecycleVisible] = useState(false);
+  const [isIEVisible, setIsIEVisible] = useState(false);
   const imgPath = '/images/icons/';
 
   // function handlePopup(icon: {src: string, alt: string}, title: string, hasMinimize: boolean, hasMaximize: boolean, size?: {width: number, height: number}) {
@@ -22,137 +29,147 @@ export default function Home() {
   //     /> as unknown as Node)
   // }
 
-      // Make the DIV element draggable:
-      useEffect(() =>  {
-dragElement(document.getElementById('contents'));
-dragElement(document.getElementById('other'));
+  // Make the DIV element draggable:
+  useEffect(() => {
+    generateDraggableElement(document.getElementById('projects'), 'window');
+    generateDraggableElement(document.getElementById('resume'), 'window');
+    generateDraggableElement(document.getElementById('my-computer'), 'window');
+    generateDraggableElement(document.getElementById('recycle-bin'), 'window');
+    generateDraggableElement(document.getElementById('ie'), 'window');
+  });
 
-
-      })
-
-// console.log('yurt',document.getElementById('contents'));
-function dragElement(elmnt) {
-    console.log(elmnt);
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + 'yup')) {
-    // if present, the header is where you move the DIV from:
-    document.getElementById(elmnt.id + 'yup')!.onmousedown = dragMouseDown;
-  } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
-  }
-
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
+  // console.log('yurt',document.getElementById('contents'));
 
   return (
     <main className={styles.main}>
-      <div>
-      <div>
-        <div
-          onClick={() => {
-            setIsProjectVisible(true);
-          }}
-        >
-          <Application
-            appName="my projects"
-            img={{ src: `${imgPath}folder.ico`, alt: 'folder icon' }}
-          />
+      <div className={styles.screen}>
+        <div>
+          <div
+            onClick={() => {
+              setIsProjectVisible(true);
+            }}
+          >
+            <Application
+              appName='my projects'
+              img={{ src: `${imgPath}folder.ico`, alt: 'folder icon' }}
+            />
+          </div>
+          <div
+            onClick={() => {
+              setIsResumeVisible(true);
+            }}
+          >
+            <Application
+              appName='my resume'
+              img={{ src: `${imgPath}file.ico`, alt: 'file icon' }}
+            />
+          </div>
+          <div
+            onClick={() => {
+              setIsComputerVisible(true);
+            }}
+          >
+            <Application
+              appName='my computer'
+              img={{ src: `${imgPath}my-computer.ico`, alt: 'computer icon' }}
+            />
+          </div>
+          <div
+            onClick={() => {
+              setIsRecycleVisible(true);
+            }}
+          >
+            <Application
+              appName='recycle bin'
+              img={{
+                src: `${imgPath}recycle-bin.ico`,
+                alt: 'recycle bin icon',
+              }}
+            />
+          </div>
+          <div
+            onClick={() => {
+              setIsIEVisible(true);
+            }}
+          >
+            <Application
+              appName='internet explorer'
+              img={{
+                src: `${imgPath}internet-explorer.ico`,
+                alt: 'internet explorer icon',
+              }}
+            />
+          </div>
         </div>
-        <div
-          onClick={() => {
-            setIsProjectVisible(true);
-          }}
-        >
-          <Application
-            appName="my resume"
-            img={{ src: `${imgPath}file.ico`, alt: 'file icon' }}
+        <div id='projects' className={styles.contents}>
+          {/* {isProjectVisible && ( */}
+          <Window
+            parentId='projects'
+            id='window'
+            icon={{ src: `${imgPath}folder.ico`, alt: 'folder icon' }}
+            title='my projects'
+            hasMaximize={true}
+            hasMinimize={true}
+            isPopupVisible={isProjectVisible}
+            children={<Projects />}
           />
+          {/* )} */}
         </div>
-        <div
-          onClick={() => {
-            setIsProjectVisible(true);
-          }}
-        >
-          <Application
-            appName="my computer"
-            img={{ src: `${imgPath}my-computer.ico`, alt: 'computer icon' }}
+        <div id='resume' className={styles.contents}>
+          {/* {isResumeVisible && ( */}
+          <Window
+            parentId='resume'
+            id='window'
+            icon={{ src: `${imgPath}file.ico`, alt: 'file icon' }}
+            title='my resume'
+            hasMaximize={true}
+            hasMinimize={true}
+            isPopupVisible={isResumeVisible}
           />
+          {/* )} */}
         </div>
-        <div
-          onClick={() => {
-            setIsProjectVisible(true);
-          }}
-        >
-          <Application
-            appName="recycle bin"
-            img={{ src: `${imgPath}recycle-bin.ico`, alt: 'recycle bin icon' }}
+        <div id='my-computer' className={styles.contents}>
+          {/* {isComputerVisible && ( */}
+          <Window
+            parentId='my-computer'
+            id='window'
+            icon={{ src: `${imgPath}my-computer.ico`, alt: 'computer icon' }}
+            title='my computer'
+            hasMaximize={true}
+            hasMinimize={true}
+            isPopupVisible={isComputerVisible}
           />
+          {/* )} */}
         </div>
-        <div
-          onClick={() => {
-            setIsProjectVisible(true);
-          }}
-        >
-          <Application
-            appName="internet explorer"
-            img={{
+        <div id='recycle-bin' className={styles.contents}>
+          {/* {isRecycleVisible && ( */}
+          <Window
+            parentId='recycle-bin'
+            id='window'
+            icon={{ src: `${imgPath}recycle-bin.ico`, alt: 'recycle bin icon' }}
+            title='recycle bin'
+            hasMaximize={true}
+            hasMinimize={true}
+            isPopupVisible={isRecycleVisible}
+          />
+          {/* )} */}
+        </div>
+        <div id='ie' className={styles.contents}>
+          {/* {isIEVisible && ( */}
+          <Window
+            parentId='ie'
+            id='window'
+            icon={{
               src: `${imgPath}internet-explorer.ico`,
               alt: 'internet explorer icon',
             }}
+            title='internet explorer'
+            hasMaximize={true}
+            hasMinimize={true}
+            isPopupVisible={isIEVisible}
           />
+          {/* )} */}
         </div>
-      </div>
-      <div id='contents' className={styles.contents}>
-        {isProjectVisible && (
-          <Window
-            parentId='contents'
-            id='yup'
-            icon={{ src: `${imgPath}folder.ico`, alt: 'folder icon' }}
-            title="my projects"
-            hasMaximize={true}
-            hasMinimize={true}
-          />
-        )}
-      </div>
-      <div id='other' className={styles.contents}>
-      <Window
-            parentId='other'
-            id='yup'
-            icon={{ src: `${imgPath}folder.ico`, alt: 'folder icon' }}
-            title="my projects"
-            hasMaximize={true}
-            hasMinimize={true}
-          />
-      </div>
       </div>
       <Footer />
     </main>

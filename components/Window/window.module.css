@@ -1,16 +1,21 @@
-.wrapper {
+.wrapper, .wrapperInFocus {
     border: 3px lightgray outset;
     background-color: white;
     position: relative;
     z-index: 1;
+    /* top: 50%;
+    left: 50%; */
+}
+
+.wrapperInFocus {
+    z-index: 2;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     padding: 2px 0 2px 2px;
-    background: linear-gradient(to right, seagreen, lightgreen);
-    cursor: url('/images/icons/cursor-move.png'), auto;
+    background: linear-gradient(to right, lavender, purple );
 }
 
 .left {

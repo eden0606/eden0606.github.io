@@ -5,7 +5,7 @@
     width: 100vw;
     height: 40px;
     border-style: outset;
-
+    z-index: 5;
 }
 
 .content {
@@ -33,6 +33,17 @@
     border-right-color: lightgray;
     border-bottom-color: lightgray;
     padding: 5px;
+    cursor: pointer;
+}
+
+.startWindow {
+    height: 450px;
+    width: 225px;
+    position: relative;
+    z-index: 6;
+    background-color: lightgray;
+    top: -450px;
+    border: 2px lightgray outset;
 }
 
 .divider {
