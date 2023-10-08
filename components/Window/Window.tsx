@@ -2,7 +2,7 @@ import { FunctionComponent, useState } from 'react';
 import styles from './Window.module.css';
 import Image from 'next/image';
 
-export interface WindowProps {
+export interface WindowProps extends React.HTMLAttributes<HTMLDivElement> {
   parentId: string;
   id: string;
   icon: {
@@ -15,7 +15,6 @@ export interface WindowProps {
   isPopupVisible: boolean;
   width?: number;
   height?: number;
-  children?: React.ReactNode;
 }
 
 const Window: FunctionComponent<WindowProps> = ({
@@ -27,7 +26,7 @@ const Window: FunctionComponent<WindowProps> = ({
   hasMinimize,
   isPopupVisible,
   width = 500,
-  height = 400,
+  height = 'auto',
   children,
 }) => {
   const [isVisible, setIsVisible] = useState(true);

@@ -1,4 +1,3 @@
-/* eslint-disable react/no-children-prop */
 'use client';
 
 import Application from '@/components/Application/Application';
@@ -9,6 +8,10 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import styles from './page.module.css';
 import Projects from '@/components/Projects/Projects';
+import RecycleBin from '@/components/RecycleBin/RecycleBin';
+import Resume from '@/components/Resume/Resume';
+
+export let openProjectWindows: string[] = [];
 
 export default function Home() {
   const [isProjectVisible, setIsProjectVisible] = useState(false);
@@ -36,13 +39,19 @@ export default function Home() {
     generateDraggableElement(document.getElementById('my-computer'), 'window');
     generateDraggableElement(document.getElementById('recycle-bin'), 'window');
     generateDraggableElement(document.getElementById('ie'), 'window');
+    // if (openWindows.includes('project-folder')) {
+    //   generateDraggableElement(
+    //     document.getElementById('project-folder-wrapper'),
+    //     'project-folder'
+    //   );
+    // }
   });
 
   // console.log('yurt',document.getElementById('contents'));
 
   return (
     <main className={styles.main}>
-      <div className={styles.screen}>
+      <div id='screen' className={styles.screen}>
         <div>
           <div
             onClick={() => {
@@ -111,9 +120,9 @@ export default function Home() {
             hasMaximize={true}
             hasMinimize={true}
             isPopupVisible={isProjectVisible}
-            children={<Projects />}
-          />
-          {/* )} */}
+          >
+            <Projects />
+          </Window>
         </div>
         <div id='resume' className={styles.contents}>
           {/* {isResumeVisible && ( */}
@@ -122,10 +131,14 @@ export default function Home() {
             id='window'
             icon={{ src: `${imgPath}file.ico`, alt: 'file icon' }}
             title='my resume'
+            width={600}
+            height={700}
             hasMaximize={true}
             hasMinimize={true}
             isPopupVisible={isResumeVisible}
-          />
+          >
+            <Resume />
+          </Window>
           {/* )} */}
         </div>
         <div id='my-computer' className={styles.contents}>
@@ -150,8 +163,12 @@ export default function Home() {
             title='recycle bin'
             hasMaximize={true}
             hasMinimize={true}
+            width={600}
+            height={700}
             isPopupVisible={isRecycleVisible}
-          />
+          >
+            <RecycleBin />
+          </Window>
           {/* )} */}
         </div>
         <div id='ie' className={styles.contents}>

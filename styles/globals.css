@@ -7,9 +7,9 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-
   /* colors */
-  --gray: #C5C5C5;
+  --gray: #c5c5c5;
+  --bg-purple: rgb(151, 66, 151);
 
   /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -92,7 +92,7 @@ body {
   /* height: 100vh; */
   overflow-x: hidden;
   font-family: var(--font-mono);
-  background-color: rgb(151, 66, 151);
+  background-color: var(--bg-purple);
   cursor: url('/images/icons/cursor-default.png'), auto;
 }
 
@@ -104,7 +104,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
-    font-family: 'VT323', Arial, Helvetica, sans-serif;
+  font-family: 'VT323', Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -117,7 +117,3 @@ a {
     color-scheme: dark;
   }
 } */
-
-
-
-
