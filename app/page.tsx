@@ -120,6 +120,7 @@ export default function Home() {
             hasMaximize={true}
             hasMinimize={true}
             isPopupVisible={isProjectVisible}
+            setVisibility={setIsProjectVisible}
           >
             <Projects />
           </Window>
@@ -136,6 +137,7 @@ export default function Home() {
             hasMaximize={true}
             hasMinimize={true}
             isPopupVisible={isResumeVisible}
+            setVisibility={setIsResumeVisible}
           >
             <Resume />
           </Window>
@@ -151,6 +153,7 @@ export default function Home() {
             hasMaximize={true}
             hasMinimize={true}
             isPopupVisible={isComputerVisible}
+            setVisibility={setIsComputerVisible}
           />
           {/* )} */}
         </div>
@@ -166,6 +169,7 @@ export default function Home() {
             width={600}
             height={700}
             isPopupVisible={isRecycleVisible}
+            setVisibility={setIsRecycleVisible}
           >
             <RecycleBin />
           </Window>
@@ -184,6 +188,7 @@ export default function Home() {
             hasMaximize={true}
             hasMinimize={true}
             isPopupVisible={isIEVisible}
+            setVisibility={setIsIEVisible}
           />
           {/* )} */}
         </div>

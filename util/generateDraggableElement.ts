@@ -6,6 +6,10 @@ export default function dragElement(element: HTMLElement | null, id: string) {
   if (!element) {
     return;
   }
+  // const parent = document.getElementById(element.id);
+  // if (parent) {
+  //   parent.style.zIndex = '2';
+  // }
   if (document.getElementById(`${element.id}${id}`)) {
     // if present, the header is where you move the DIV from:
     document.getElementById(`${element.id}${id}`)!.onmousedown = dragMouseDown;
