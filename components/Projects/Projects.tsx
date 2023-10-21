@@ -27,6 +27,8 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
   console.log('open', openProjectWindows);
   const [isGenerated, setIsGenerated] = useState(false);
   const [projectName, setProjectName] = useState('');
+  const [isVisible, setIsVisible] = useState(true);
+
   useEffect(() => {
     // if (document.getElementById('project-folder-wrapper')) {
     //   console.log('ue');
@@ -60,8 +62,9 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
                       title={project.name}
                       hasMinimize={true}
                       hasMaximize={true}
-                      isPopupVisible={true}
+                      isPopupVisible={isVisible}
                       width={400}
+                      setVisibility={setIsVisible}
                     >
                       <ProjectCard {...project} />
                     </Window>,

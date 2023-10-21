@@ -12,7 +12,7 @@ export interface WindowProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   hasMinimize: boolean;
   hasMaximize: boolean;
-  isPopupVisible?: boolean;
+  isPopupVisible: boolean;
   setVisibility: React.Dispatch<React.SetStateAction<boolean>>;
   width?: number;
   height?: number;
@@ -34,7 +34,7 @@ const Window: FunctionComponent<WindowProps> = ({
   const [isVisible, setIsVisible] = useState(true);
   const [isMaximized, setIsMaximized] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-
+  console.log('ispopul', isPopupVisible);
   return (
     (isPopupVisible && (
       <div
@@ -56,7 +56,7 @@ const Window: FunctionComponent<WindowProps> = ({
               <div
                 className={styles.navWrapper}
                 onClick={() => {
-                  isPopupVisible = false;
+                  setVisibility(false);
                 }}
               >
                 <p className={styles.minimize}>_</p>
@@ -73,6 +73,7 @@ const Window: FunctionComponent<WindowProps> = ({
             <div
               className={styles.navWrapper}
               onClick={(e) => {
+                console.log('i be closin');
                 setVisibility(false);
                 console.log(
                   e.currentTarget.parentElement?.parentElement?.parentElement

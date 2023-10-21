@@ -10,6 +10,7 @@ import styles from './page.module.css';
 import Projects from '@/components/Projects/Projects';
 import RecycleBin from '@/components/RecycleBin/RecycleBin';
 import Resume from '@/components/Resume/Resume';
+import IE from '@/components/IE/IE';
 
 export let openProjectWindows: string[] = [];
 
@@ -19,6 +20,7 @@ export default function Home() {
   const [isComputerVisible, setIsComputerVisible] = useState(false);
   const [isRecycleVisible, setIsRecycleVisible] = useState(false);
   const [isIEVisible, setIsIEVisible] = useState(false);
+  const [isConnectToIEVisible, setIsConnectToIEVisible] = useState(false);
   const imgPath = '/images/icons/';
 
   // function handlePopup(icon: {src: string, alt: string}, title: string, hasMinimize: boolean, hasMaximize: boolean, size?: {width: number, height: number}) {
@@ -52,8 +54,9 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div id='screen' className={styles.screen}>
-        <div>
+        <div className={styles.wrapper}>
           <div
+            className={styles.applicationWrapper}
             onClick={() => {
               setIsProjectVisible(true);
             }}
@@ -64,6 +67,7 @@ export default function Home() {
             />
           </div>
           <div
+            className={styles.applicationWrapper}
             onClick={() => {
               setIsResumeVisible(true);
             }}
@@ -74,6 +78,7 @@ export default function Home() {
             />
           </div>
           <div
+            className={styles.applicationWrapper}
             onClick={() => {
               setIsComputerVisible(true);
             }}
@@ -84,6 +89,7 @@ export default function Home() {
             />
           </div>
           <div
+            className={styles.applicationWrapper}
             onClick={() => {
               setIsRecycleVisible(true);
             }}
@@ -97,6 +103,7 @@ export default function Home() {
             />
           </div>
           <div
+            className={styles.applicationWrapper}
             onClick={() => {
               setIsIEVisible(true);
             }}
@@ -106,6 +113,20 @@ export default function Home() {
               img={{
                 src: `${imgPath}internet-explorer.ico`,
                 alt: 'internet explorer icon',
+              }}
+            />
+          </div>
+          <div
+            className={styles.applicationWrapper}
+            onClick={() => {
+              setIsConnectToIEVisible(true);
+            }}
+          >
+            <Application
+              appName='connect to the internet'
+              img={{
+                src: `${imgPath}connect-to-internet.ico`,
+                alt: 'connect to the internet icon',
               }}
             />
           </div>
@@ -166,8 +187,6 @@ export default function Home() {
             title='recycle bin'
             hasMaximize={true}
             hasMinimize={true}
-            width={600}
-            height={700}
             isPopupVisible={isRecycleVisible}
             setVisibility={setIsRecycleVisible}
           >
@@ -189,7 +208,28 @@ export default function Home() {
             hasMinimize={true}
             isPopupVisible={isIEVisible}
             setVisibility={setIsIEVisible}
-          />
+          >
+            <IE />
+          </Window>
+          {/* )} */}
+        </div>
+        <div id='connect-to-ie' className={styles.contents}>
+          {/* {isIEVisible && ( */}
+          <Window
+            parentId='connect-to-ie'
+            id='window'
+            icon={{
+              src: `${imgPath}connect-to-internet.ico`,
+              alt: 'connect to internet icon',
+            }}
+            title='connect to the internet'
+            hasMaximize={true}
+            hasMinimize={true}
+            isPopupVisible={isConnectToIEVisible}
+            setVisibility={setIsConnectToIEVisible}
+          >
+            <IE />
+          </Window>
           {/* )} */}
         </div>
       </div>
