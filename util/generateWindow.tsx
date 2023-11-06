@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode, use, useEffect } from 'react';
-import ReactDOMServer from 'react-dom/server';
 import generateDraggableElement from './generateDraggableElement';
+import ReactDOM from 'react-dom';
 
 // generate window component and then append this to the page
 export default function generateWindow(
@@ -11,14 +11,16 @@ export default function generateWindow(
 ) {
   const window = document.getElementById(appendTo);
   if (window) {
-    const wrapper = document.createElement('div');
-    wrapper.id = parentId;
-    wrapper.style.position = 'absolute';
-    wrapper.style.top = '15%';
-    wrapper.style.left = '25%';
-    wrapper.innerHTML = ReactDOMServer.renderToString(Window);
+    // const wrapper = document.createElement('div');
+    // wrapper.id = parentId;
+    // wrapper.style.position = 'absolute';
+    // wrapper.style.top = '15%';
+    // wrapper.style.left = '25%';
+    // wrapper.innerHTML = ReactDOMServer.renderToString(Window);
+    // eslint-disable-next-line react/no-deprecated
+    ReactDOM.createPortal(Window, window);
     // console.log(Window);
-    window.appendChild(wrapper);
+    // window.appendChild(wrapper);
     // openWindows.push(parentId);
   }
 }

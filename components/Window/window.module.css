@@ -43,6 +43,10 @@
   cursor: pointer;
 }
 
+.navWrapper:active {
+  border-style: inset;
+}
+
 .minimize {
   position: absolute;
   top: -1px;

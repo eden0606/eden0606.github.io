@@ -1,10 +1,12 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { FunctionComponent, useContext, useEffect, useState } from 'react';
 import styles from './Footer.module.css';
 import Image from 'next/image';
+import ProjectWindowContext from '@/app/ProjectWindowContext';
 
 const Footer: FunctionComponent = ({ props }) => {
   const [time, setTime] = useState('');
   const [isStartVisible, setIsStartVisible] = useState(false);
+  const { windowContext } = useContext(ProjectWindowContext);
 
   function updateTime() {
     const date = new Date();
@@ -71,7 +73,13 @@ const Footer: FunctionComponent = ({ props }) => {
             </div>
             <div className={styles.divider}></div>
             <div className={styles.secondaryDivider}></div>
-            <div className={styles.tab}>name of tab here</div>
+            {windowContext.map((window) => {
+              return (
+                <div className={styles.tab} key={window}>
+                  {window.replaceAll('-', ' ').replace('window', '')}
+                </div>
+              );
+            })}
           </div>
           <div className={styles.right}>
             <div className={styles.time}>

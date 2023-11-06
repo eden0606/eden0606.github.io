@@ -1,12 +1,12 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { FunctionComponent, useContext, useEffect, useState } from 'react';
 import styles from './Projects.module.css';
 import Image from 'next/image';
 import { projects } from '@/data/projects';
 import Window, { WindowProps } from '../Window/Window';
 import generateDraggableElement from '@/util/generateDraggableElement';
 import generateWindow from '@/util/generateWindow';
-import { openProjectWindows } from '@/app/page';
 import ProjectCard from '../ProjectCard/ProjectCard';
+import ProjectWindowContext from '@/app/ProjectWindowContext';
 
 interface ProjectsProps {
   // window: WindowProps
@@ -24,10 +24,11 @@ interface ProjectsProps {
 }
 
 const Projects: FunctionComponent<ProjectsProps> = () => {
-  console.log('open', openProjectWindows);
   const [isGenerated, setIsGenerated] = useState(false);
   const [projectName, setProjectName] = useState('');
   const [isVisible, setIsVisible] = useState(true);
+  const { windowContext, setWindowContext, removeWindowContext } =
+    useContext(ProjectWindowContext);
 
   useEffect(() => {
     // if (document.getElementById('project-folder-wrapper')) {
@@ -50,7 +51,7 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
               className={styles.project}
               key={`project-${index}`}
               onClick={() => {
-                if (!openProjectWindows?.includes(`${project.name}-window`)) {
+                if (!windowContext?.includes(`${project.name}-window`)) {
                   generateWindow(
                     <Window
                       parentId={`${project.name}-wrapper`}
@@ -71,7 +72,7 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
                     `${project.name}-wrapper`,
                     `${project.name}-window`
                   );
-                  openProjectWindows?.push(`${project.name}-window`);
+                  setWindowContext(windowContext, `${project.name}-window`);
                   setProjectName(project.name);
                 }
               }}

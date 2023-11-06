@@ -1,109 +1,115 @@
 .footer {
-    position: absolute;
-    bottom: 0;
-    background-color: var(--gray);
-    width: 100vw;
-    height: 40px;
-    border-style: outset;
-    z-index: 5;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--gray);
+  width: 100vw;
+  height: 40px;
+  border-style: outset;
+  z-index: 5;
 }
 
 .content {
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    padding: 2px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2px;
 }
 
 .left {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .right {
-    display: flex;
-    justify-content: flex-end;
-    /* border-style: inset; */
+  display: flex;
+  justify-content: flex-end;
+  /* border-style: inset; */
 }
 
 .start {
-    border: 2px white outset;
-    border-top-color: white;
-    border-left-color: white;
-    border-right-color: lightgray;
-    border-bottom-color: lightgray;
-    padding: 5px;
-    cursor: pointer;
+  border: 2px white outset;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: lightgray;
+  border-bottom-color: lightgray;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .startWindow {
-    height: 450px;
-    width: 225px;
-    position: relative;
-    z-index: 6;
-    background-color: lightgray;
-    top: -450px;
-    border: 2px lightgray outset;
+  height: 450px;
+  width: 225px;
+  position: relative;
+  z-index: 6;
+  background-color: lightgray;
+  top: -450px;
+  border: 2px lightgray outset;
 }
 
 .divider {
-    border-style: inset;
-    margin: 0px 4px;
+  border-style: inset;
+  margin: 0px 4px;
 }
 
 .secondaryDivider {
-    border-style: outset;
-    padding: 0.5px;
-    margin: 4px 4px 4px 0;
+  border-style: outset;
+  padding: 0.5px;
+  margin: 4px 4px 4px 0;
 }
 
 .iconWrapper {
-    padding: 5px 0;
+  padding: 5px 0;
 }
 
-.notepadIcon, .folderIcon {
-    margin: 0px 6px;
+.notepadIcon,
+.folderIcon {
+  margin: 0px 6px;
 }
 
 .tab {
-    padding: 5px 10px;
-    border: 2px white outset;
-    border-top-color: white;
-    border-left-color: white;
-    border-right-color: lightgray;
-    border-bottom-color: lightgray;
+  padding: 5px 10px;
+  border: 2px white outset;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: lightgray;
+  border-bottom-color: lightgray;
 
-    /* only this when clicked */
-    /* border-top-color: lightgray;
+  /* only this when clicked */
+  /* border-top-color: lightgray;
     border-left-color: lightgray;
     border-right-color: white;
     border-bottom-color: white; */
 }
 
+.tab:active,
+.start:active {
+  border-style: inset;
+}
+
 .start {
-    display: flex;
+  display: flex;
 }
 
 .startIcon {
-    margin-right: 2px;
+  margin-right: 2px;
 }
 
 .startText {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .volumeIcon {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .time {
-    border: 2px white inset;
-    border-top-color: lightgray;
-    border-left-color: lightgray;
-    border-right-color: white;
-    border-bottom-color: white;
-    height: 100%;
-    padding: 5px 15px 5px 3px;
-    display: flex;
-    justify-content: space-between;
+  border: 2px white inset;
+  border-top-color: lightgray;
+  border-left-color: lightgray;
+  border-right-color: white;
+  border-bottom-color: white;
+  height: 100%;
+  padding: 5px 15px 5px 3px;
+  display: flex;
+  justify-content: space-between;
 }
