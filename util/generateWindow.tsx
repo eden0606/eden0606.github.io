@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode, use, useEffect } from 'react';
 import generateDraggableElement from './generateDraggableElement';
-import ReactDOM from 'react-dom';
+import ReactDOM, { createPortal } from 'react-dom';
 
 // generate window component and then append this to the page
 export default function generateWindow(
@@ -18,7 +18,10 @@ export default function generateWindow(
     // wrapper.style.left = '25%';
     // wrapper.innerHTML = ReactDOMServer.renderToString(Window);
     // eslint-disable-next-line react/no-deprecated
-    ReactDOM.createPortal(Window, window);
+    console.log(window);
+    {
+      createPortal(Window, document.body);
+    }
     // console.log(Window);
     // window.appendChild(wrapper);
     // openWindows.push(parentId);

@@ -37,12 +37,12 @@
 }
 
 .startWindow {
-  height: 450px;
+  height: max-content;
   width: 225px;
   position: relative;
   z-index: 6;
   background-color: lightgray;
-  top: -450px;
+  top: -394px;
   border: 2px lightgray outset;
 }
 
@@ -73,6 +73,7 @@
   border-left-color: white;
   border-right-color: lightgray;
   border-bottom-color: lightgray;
+  width: 150px;
 
   /* only this when clicked */
   /* border-top-color: lightgray;
@@ -112,4 +113,28 @@
   padding: 5px 15px 5px 3px;
   display: flex;
   justify-content: space-between;
+}
+
+.programWrapper {
+  display: flex;
+  gap: 15px;
+  padding: 5px 0;
+}
+
+.programWrapper:first-child,
+.programWrapper:nth-child(5) {
+  border-bottom: 1px solid darkgray;
+  border-bottom-style: outset;
+}
+
+.programWrapper:hover {
+  border-style: outset;
+}
+
+.programWrapper:active {
+  border-style: inset;
+}
+
+.programText {
+  margin: auto 0;
 }

@@ -2,6 +2,7 @@ import { FunctionComponent, useContext, useEffect, useState } from 'react';
 import styles from './Footer.module.css';
 import Image from 'next/image';
 import ProjectWindowContext from '@/app/ProjectWindowContext';
+import { startPrograms } from '@/data/startPrograms';
 
 const Footer: FunctionComponent = ({ props }) => {
   const [time, setTime] = useState('');
@@ -21,7 +22,10 @@ const Footer: FunctionComponent = ({ props }) => {
     setInterval(updateTime, 60000);
     if (document.getElementsByTagName('body')) {
       document.body.addEventListener('click', (e) => {
-        setIsStartVisible(false);
+        const clickedEl = e.target as HTMLElement;
+        if (!clickedEl.className.includes('Footer')) {
+          setIsStartVisible(false);
+        }
       });
     }
   }, [time]);
@@ -95,7 +99,27 @@ const Footer: FunctionComponent = ({ props }) => {
           </div>
         </div>
       </div>
-      {isStartVisible && <div className={styles.startWindow}>yup</div>}
+      {isStartVisible && (
+        <div className={styles.startWindow}>
+          {startPrograms.map((program, idx) => {
+            return (
+              <div
+                key={`${program.name}-${idx}`}
+                className={styles.programWrapper}
+              >
+                <Image
+                  src={program.img.src}
+                  alt={program.img.alt}
+                  className={styles.startIcon}
+                  width={45}
+                  height={45}
+                />
+                <p className={styles.programText}>{program.name}</p>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </section>
   );
 };

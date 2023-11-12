@@ -7,6 +7,7 @@ import generateDraggableElement from '@/util/generateDraggableElement';
 import generateWindow from '@/util/generateWindow';
 import ProjectCard from '../ProjectCard/ProjectCard';
 import ProjectWindowContext from '@/app/ProjectWindowContext';
+import { createPortal } from 'react-dom';
 
 interface ProjectsProps {
   // window: WindowProps
@@ -24,9 +25,10 @@ interface ProjectsProps {
 }
 
 const Projects: FunctionComponent<ProjectsProps> = () => {
-  const [isGenerated, setIsGenerated] = useState(false);
+  const [shouldGenerateWindow, setShouldGenerateWindow] = useState(false);
   const [projectName, setProjectName] = useState('');
   const [isVisible, setIsVisible] = useState(true);
+  const window = document.getElementById('screen') as Element;
   const { windowContext, setWindowContext, removeWindowContext } =
     useContext(ProjectWindowContext);
 
@@ -34,8 +36,13 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
     // if (document.getElementById('project-folder-wrapper')) {
     //   console.log('ue');
     // if (!openProjectWindows.includes(`${projectName}-window`)) {
+    console.log('project name', projectName);
+    console.log(
+      'window context',
+      document.getElementById(`${projectName}-wrapper${projectName}-window`)
+    );
     generateDraggableElement(
-      document.getElementById(`${projectName}-wrapper`),
+      document.getElementById(`${projectName}-wrapper${projectName}-window`),
       `${projectName}-window`
     );
     // }
@@ -52,31 +59,55 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
               key={`project-${index}`}
               onClick={() => {
                 if (!windowContext?.includes(`${project.name}-window`)) {
-                  generateWindow(
-                    <Window
-                      parentId={`${project.name}-wrapper`}
-                      id={`${project.name}-window`}
-                      icon={{
-                        src: '/images/icons/folder.ico',
-                        alt: 'folder icon',
-                      }}
-                      title={project.name}
-                      hasMinimize={true}
-                      hasMaximize={true}
-                      isPopupVisible={isVisible}
-                      width={400}
-                      setVisibility={setIsVisible}
-                    >
-                      <ProjectCard {...project} />
-                    </Window>,
-                    `${project.name}-wrapper`,
-                    `${project.name}-window`
-                  );
+                  setShouldGenerateWindow(true);
+                  // generateWindow(
+                  // createPortal(
+                  //   <Window
+                  //     parentId={`${project.name}-wrapper`}
+                  //     id={`${project.name}-window`}
+                  //     icon={{
+                  //       src: '/images/icons/folder.ico',
+                  //       alt: 'folder icon',
+                  //     }}
+                  //     title={project.name}
+                  //     hasMinimize={true}
+                  //     hasMaximize={true}
+                  //     isPopupVisible={isVisible}
+                  //     width={400}
+                  //     setVisibility={setIsVisible}
+                  //   >
+                  //     <ProjectCard {...project} />
+                  //   </Window>,
+                  //   window
+                  //   // `${project.name}-wrapper`,
+                  //   // `${project.name}-window`,
+                  // );
+                  // );
                   setWindowContext(windowContext, `${project.name}-window`);
                   setProjectName(project.name);
                 }
               }}
             >
+              {shouldGenerateWindow &&
+                createPortal(
+                  <Window
+                    parentId={`${project.name}-wrapper`}
+                    id={`${project.name}-window`}
+                    icon={{
+                      src: '/images/icons/folder.ico',
+                      alt: 'folder icon',
+                    }}
+                    title={project.name}
+                    hasMinimize={true}
+                    hasMaximize={true}
+                    isPopupVisible={isVisible}
+                    width={400}
+                    setVisibility={setIsVisible}
+                  >
+                    <ProjectCard {...project} />
+                  </Window>,
+                  window
+                )}
               <Image
                 src={project.img.src}
                 alt={project.img.alt}

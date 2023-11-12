@@ -38,7 +38,7 @@ const Window: FunctionComponent<WindowProps> = ({
 
   const { windowContext, setWindowContext, removeWindowContext } =
     useContext(ProjectWindowContext);
-  // console.log('ispopul', isPopupVisible);
+  // console.log(`project tab ${parentId}`, isPopupVisible);
   return (
     (isPopupVisible && (
       <div
