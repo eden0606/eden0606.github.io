@@ -1,0 +1,55 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+
+  a {
+    text-decoration: underline dotted;
+  }
+}
+
+.iconWrapper {
+  width: 200px;
+  margin: 0 auto;
+
+  .icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.name {
+  text-align: center;
+}
+
+.tagWrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tag {
+  border: 2px dotted lightblue;
+  padding: 4px 6px;
+  margin: 4px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .iconWrapper {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .iconWrapper {
+    width: 550px;
+  }
+}

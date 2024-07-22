@@ -10,6 +10,7 @@
   /* colors */
   --gray: #c5c5c5;
   --bg-purple: rgb(151, 66, 151);
+  --cream: rgb(240, 236, 218);
 
   /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -84,6 +85,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'VT323', Arial, Helvetica, sans-serif;
 }
 
 html,
@@ -92,7 +94,8 @@ body {
   /* height: 100vh; */
   overflow-x: hidden;
   font-family: var(--font-mono);
-  background-color: var(--bg-purple);
+  /* background-color: var(--bg-purple); */
+  background-color: lightblue;
   cursor: url('/images/icons/cursor-default.png'), auto;
 }
 
@@ -104,7 +107,6 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
-  font-family: 'VT323', Arial, Helvetica, sans-serif;
 }
 
 a {

@@ -1,0 +1,28 @@
+.projectWrapper {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.project:active {
+  border: 1px dotted black;
+}
+
+.project img {
+  margin: 0 auto;
+}
+
+.projectWindow {
+  /* width: 100vw; */
+}

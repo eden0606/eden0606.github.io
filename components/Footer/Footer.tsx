@@ -1,13 +1,13 @@
 import { FunctionComponent, useContext, useEffect, useState } from 'react';
-import styles from './Footer.module.css';
+import styles from './Footer.module.scss';
 import Image from 'next/image';
-import ProjectWindowContext from '@/app/ProjectWindowContext';
 import { startPrograms } from '@/data/startPrograms';
+import { WindowsContext } from '../WindowsProvider';
 
-const Footer: FunctionComponent = ({ props }) => {
+const Footer: FunctionComponent = () => {
   const [time, setTime] = useState('');
   const [isStartVisible, setIsStartVisible] = useState(false);
-  const { windowContext } = useContext(ProjectWindowContext);
+  const { windows } = useContext(WindowsContext);
 
   function updateTime() {
     const date = new Date();
@@ -77,7 +77,7 @@ const Footer: FunctionComponent = ({ props }) => {
             </div>
             <div className={styles.divider}></div>
             <div className={styles.secondaryDivider}></div>
-            {windowContext.map((window) => {
+            {windows.map((window) => {
               return (
                 <div className={styles.tab} key={window}>
                   {window.replaceAll('-', ' ').replace('window', '')}

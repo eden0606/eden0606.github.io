@@ -1,8 +1,8 @@
-import { FunctionComponent, useState } from 'react';
+import { ButtonHTMLAttributes, FunctionComponent, useState } from 'react';
 import Image from 'next/image';
-import styles from './Application.module.css';
+import styles from './Application.module.scss';
 
-interface ApplicationProps {
+interface ApplicationProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   appName: string;
   img: {
     src: string;
@@ -12,21 +12,17 @@ interface ApplicationProps {
   };
 }
 
-const Application: FunctionComponent<ApplicationProps> = ({ appName, img }) => {
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
-
+const Application: FunctionComponent<ApplicationProps> = ({ appName, img, ...props }) => {
   return (
-    <div className={styles.wrapper}>
-      <div>
-        <Image
-          src={img.src}
-          alt={img.alt}
-          width={img.width ?? 50}
-          height={img.height ?? 50}
-        />
-      </div>
+    <button {...props} className={styles.root}>
+      <Image
+        src={img.src}
+        alt={img.alt}
+        width={img.width ?? 50}
+        height={img.height ?? 50}
+      />
       <p className={styles.appName}>{appName}</p>
-    </div>
+    </button>
   );
 };
 

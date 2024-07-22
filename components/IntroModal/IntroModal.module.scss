@@ -1,0 +1,68 @@
+.root,
+.fade {
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    // backdrop-filter: blur(2px);
+}
+
+.fade {
+
+    animation: fade 1s linear forwards;
+
+    @keyframes fade {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            display: none;
+        }
+    }
+}
+
+.contentWrapper {
+    position: relative;
+    top: 35%;
+    background-color: var(--cream);
+    width: max-content;
+    padding: 32px;
+    margin: auto;
+}
+
+.exitButton {}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .blinkingCursor {
+        display: inline-block;
+        width: 2px;
+        height: 30px;
+        background-color: black;
+        margin-left: 4px;
+        // animation: blink .5s linear infinite alternate;
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+
+        40% {
+            opacity: 1;
+        }
+
+        60% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+}

@@ -1,56 +1,45 @@
-import { FunctionComponent, useContext, useState } from 'react';
-import styles from './Window.module.css';
+import { FunctionComponent, useContext, useEffect, useState } from 'react';
+import styles from './Window.module.scss';
 import Image from 'next/image';
-import ProjectWindowContext from '@/app/ProjectWindowContext';
+import { WindowsContext } from '../WindowsProvider';
+import { closeWindow } from '@/util/operations';
+import { useOutlet } from 'react-router-dom';
 
 export interface WindowProps extends React.HTMLAttributes<HTMLDivElement> {
-  parentId: string;
-  id: string;
   icon: {
     src: string;
     alt: string;
   };
   title: string;
-  hasMinimize: boolean;
-  hasMaximize: boolean;
-  isPopupVisible: boolean;
-  setVisibility: React.Dispatch<React.SetStateAction<boolean>>;
-  width?: number;
-  height?: number;
+  hasMinimize?: boolean;
+  hasMaximize?: boolean;
+  width?: number | string;
+  height?: number | string;
 }
 
 const Window: FunctionComponent<WindowProps> = ({
-  parentId,
-  id,
   icon,
   title,
-  hasMaximize,
-  hasMinimize,
-  isPopupVisible,
-  setVisibility,
-  width = 500,
+  hasMaximize = true,
+  hasMinimize = true,
+  width = 'fit-content',
   height = 'auto',
   children,
+  ...props
 }) => {
-  // const [isVisible, setIsVisible] = useState(true);
   const [isMaximized, setIsMaximized] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  const { windows, removeWindow } = useContext(WindowsContext);
 
-  const { windowContext, setWindowContext, removeWindowContext } =
-    useContext(ProjectWindowContext);
-  // console.log(`project tab ${parentId}`, isPopupVisible);
   return (
-    (isPopupVisible && (
+    <div {...props} id={props.id} className={`${styles.root} ${props.className}`}>
       <div
-        id={`${parentId}${id}`}
         style={{
           width: isMaximized ? '100vw' : width,
-          height: isMaximized ? '100vh' : height,
+          height: isMaximized ? '90vh' : height,
         }}
         className={styles.wrapper}
-        // onClick={() => {setIsClicked(true)}}
       >
-        <div className={styles.header}>
+        <div id={`${props.id}-header`} className={styles.header}>
           <div className={styles.left}>
             <Image src={icon.src} alt={icon.alt} width={15} height={15} />
             <h3 className={styles.title}>{title}</h3>
@@ -60,12 +49,8 @@ const Window: FunctionComponent<WindowProps> = ({
               <div
                 className={styles.navWrapper}
                 onClick={() => {
-                  setVisibility(false);
-                  removeWindowContext(windowContext, `${parentId}${id}`);
-                  // const removeIdx = openProjectWindows.findIndex(
-                  //   (window) => window === `${parentId}${id}`
-                  // );
-                  // openProjectWindows.splice(removeIdx, 1);
+                  closeWindow(props.id ?? '');
+                  removeWindow(props.id ?? '');
                 }}
               >
                 <p className={styles.minimize}>_</p>
@@ -81,14 +66,9 @@ const Window: FunctionComponent<WindowProps> = ({
             )}
             <div
               className={styles.navWrapper}
-              onClick={(e) => {
-                console.log('i be closin');
-                setVisibility(false);
-                console.log(
-                  e.currentTarget.parentElement?.parentElement?.parentElement
-                    ?.parentElement
-                );
-                removeWindowContext(windowContext, `${parentId}${id}`);
+              onClick={() => {
+                closeWindow(props.id ?? '');
+                removeWindow(props.id ?? '');
               }}
             >
               <p className={styles.close}>x</p>
@@ -97,7 +77,7 @@ const Window: FunctionComponent<WindowProps> = ({
         </div>
         {children}
       </div>
-    )) || <></>
+    </div>
   );
 };
 

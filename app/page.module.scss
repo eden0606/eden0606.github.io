@@ -1,0 +1,33 @@
+.root {
+  // height: 100vh;
+}
+
+.screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 0 0 0;
+
+  button {
+    background-color: transparent;
+    border: none;
+    max-width: 100px;
+  }
+
+  button:nth-child(5) {
+    position: absolute;
+    right: 20px;
+  }
+}
+
+.window {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.displayNone {
+  display: none;
+}

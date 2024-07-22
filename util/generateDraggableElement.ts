@@ -1,4 +1,5 @@
-export default function dragElement(element: HTMLElement | null, id: string) {
+export default function useDragElement(element: HTMLElement | null, elementId: string) {
+
   let pos1 = 0,
     pos2 = 0,
     pos3 = 0,
@@ -6,21 +7,27 @@ export default function dragElement(element: HTMLElement | null, id: string) {
   if (!element) {
     return;
   }
-  // const parent = document.getElementById(element.id);
-  // if (parent) {
-  //   parent.style.zIndex = '2';
-  // }
-  if (document.getElementById(`${element.id}${id}`)) {
+
+  console.log(element.id);
+  console.log('emement  ', element);
+
+  console.log(document.getElementById(`${elementId}-header`), 'header')
+  if (document.getElementById(`${elementId}-header`)) {
     // if present, the header is where you move the DIV from:
-    document.getElementById(`${element.id}${id}`)!.onmousedown = dragMouseDown;
+    document.getElementById(`${elementId}-header`)!.onmousedown = dragMouseDown;
+    document.getElementById(`${elementId}-header`)!.ontouchstart = dragTouchEvent;
+
   } else {
     // otherwise, move the DIV from anywhere inside the DIV:
-    element.onmousedown = dragMouseDown;
+    if (element?.parentElement) {
+      element.parentElement.onmousedown = dragMouseDown;
+      element.parentElement.ontouchstart = dragTouchEvent;
+    }
   }
 
-  console.log(document.getElementById(`${element.id}${id}`));
-
   function dragMouseDown(e: MouseEvent) {
+    console.log('dragMouseDown');
+    console.log('event', e)
     e = e || window.event;
     e.preventDefault();
     // get the mouse cursor position at startup:
@@ -28,10 +35,46 @@ export default function dragElement(element: HTMLElement | null, id: string) {
     pos4 = e.clientY;
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
+    document.onmousemove = elementMouseDrag;
+
+    const visibleWindows = document.querySelectorAll('[window-visible]');
+
+    if (visibleWindows) {
+      visibleWindows.forEach((window) => {
+        if (window.children[0].id === elementId) {
+          (window as HTMLElement).style.zIndex = '2';
+        } else {
+          (window as HTMLElement).style.zIndex = '1';
+        }
+      });
+    }
   }
 
-  function elementDrag(e: MouseEvent) {
+  function dragTouchEvent(e: TouchEvent) {
+    console.log('dragMouseDown');
+    console.log('event', e)
+    e = e || window.event;
+    // get the mouse cursor position at startup:
+    pos3 = e.touches[0].clientX;
+    pos4 = e.touches[0].clientY;
+    document.ontouchend = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.ontouchmove = elementTouchDrag;
+
+    const visibleWindows = document.querySelectorAll('[window-visible]');
+
+    if (visibleWindows) {
+      visibleWindows.forEach((window) => {
+        if (window.children[0].id === elementId) {
+          (window as HTMLElement).style.zIndex = '2';
+        } else {
+          (window as HTMLElement).style.zIndex = '1';
+        }
+      });
+    }
+  }
+
+  function elementMouseDrag(e: MouseEvent) {
     if (!element) {
       return;
     }
@@ -47,9 +90,26 @@ export default function dragElement(element: HTMLElement | null, id: string) {
     element.style.left = element.offsetLeft - pos1 + 'px';
   }
 
+  function elementTouchDrag(e: TouchEvent) {
+    if (!element) {
+      return;
+    }
+    e = e || window.event;
+    // calculate the new cursor position:
+    pos1 = pos3 - e.touches[0].clientX;
+    pos2 = pos4 - e.touches[0].clientY;
+    pos3 = e.touches[0].clientX;
+    pos4 = e.touches[0].clientY;
+    // set the element's new position:
+    element.style.top = element.offsetTop - pos2 + 'px';
+    element.style.left = element.offsetLeft - pos1 + 'px';
+  }
+
   function closeDragElement() {
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
+    document.ontouchend = null;
+    document.ontouchstart = null;
   }
 }

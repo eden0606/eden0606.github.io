@@ -1,0 +1,21 @@
+.root {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.item img {
+  margin: 0 auto 4px auto;
+}

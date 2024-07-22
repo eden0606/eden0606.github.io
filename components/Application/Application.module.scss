@@ -1,0 +1,17 @@
+.root {
+    margin-left: 5px;
+}
+
+.root:hover {
+    cursor: pointer;
+}
+
+.root:active {
+    border: 1px dotted black;
+}
+
+.appName {
+    font-size: 16px;
+    color: black;
+    margin-top: 5px;
+}
