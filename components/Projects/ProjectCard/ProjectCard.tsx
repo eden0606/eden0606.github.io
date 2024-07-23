@@ -22,7 +22,7 @@ const ProjectCard: FunctionComponent<ProjectData> = ({
         {site && (
           <a href={site} target='_blank'><Image src='/images/icons/internet-explorer.ico' alt='ie logo' width={20} height={20} /></a>)}
         {github && (
-          <a href={github} target='_blank'><Image src='/images/icons/pixel-github-logo.png' alt='github logo' width={20} height={20} /></a>
+          <a href={github} target='_blank'><Image src='/images/icons/github.png' alt='github logo' width={20} height={20} /></a>
         )}
       </div>
       <p className={styles.description}>

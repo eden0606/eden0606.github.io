@@ -7,6 +7,10 @@
   a {
     text-decoration: underline dotted;
   }
+
+  a:hover {
+    text-decoration-color: lightblue;
+  }
 }
 
 .iconWrapper {
@@ -40,6 +44,15 @@
   display: flex;
   justify-content: center;
   gap: 16px;
+
+  // TODO: do the thing where the addition of the border on hover won't effect/shift the overall height
+  a:hover {
+    border-bottom: dotted 2px lightblue;
+  }
+
+  a:active {
+    border: 1px dotted black;
+  }
 }
 
 @media screen and (min-width: 768px) {

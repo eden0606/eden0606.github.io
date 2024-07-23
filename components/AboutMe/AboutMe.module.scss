@@ -82,6 +82,29 @@
     text-align: center;
 }
 
+.icons {
+    display: flex;
+    gap: 12px;
+
+    a {
+        margin: auto 0;
+        padding: 5px;
+    }
+
+    a:last-child {
+        padding-top: 10px;
+    }
+
+    // TODO: do the thing where the addition of the border on hover won't effect/shift the overall height
+    a:hover {
+        border-bottom: dotted lightblue 3px;
+    }
+
+    a:active {
+        border: 1px dotted black;
+    }
+}
+
 @media screen and (min-width: 1080px) {
     .root {
         flex-direction: row;
