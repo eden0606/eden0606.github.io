@@ -156,7 +156,8 @@ export const renderApplicationWindows = [
             src: '/images/icons/my-computer.ico',
             alt: 'computer icon',
         }}
-        title='about me'>
+        title='about me'
+        hasMaximize={false}>
         <AboutMe />
     </Window>
 ]
