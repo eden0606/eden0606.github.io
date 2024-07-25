@@ -22,7 +22,7 @@ const Window: FunctionComponent<WindowProps> = ({
   title,
   hasMaximize = true,
   hasMinimize = true,
-  width = 'fit-content',
+  width = '75vw',
   height = 'auto',
   children,
   ...props

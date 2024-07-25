@@ -8,6 +8,12 @@
   // does this really need to be a 5
   // z-index: 5;
   z-index: 1;
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
 }
 
 .content {

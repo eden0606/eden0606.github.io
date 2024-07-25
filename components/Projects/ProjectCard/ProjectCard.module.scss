@@ -45,7 +45,10 @@
   justify-content: center;
   gap: 16px;
 
-  // TODO: do the thing where the addition of the border on hover won't effect/shift the overall height
+  a {
+    border: 2px dotted transparent;
+  }
+
   a:hover {
     border-bottom: dotted 2px lightblue;
   }

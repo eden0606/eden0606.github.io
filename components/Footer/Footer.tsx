@@ -3,11 +3,12 @@ import styles from './Footer.module.scss';
 import Image from 'next/image';
 import { startPrograms } from '@/data/startPrograms';
 import { WindowsContext } from '../WindowsProvider';
+import { openWindow } from '@/util/operations';
 
 const Footer: FunctionComponent = () => {
   const [time, setTime] = useState('');
   const [isStartVisible, setIsStartVisible] = useState(false);
-  const { windows } = useContext(WindowsContext);
+  const { windows, addWindow } = useContext(WindowsContext);
 
   function updateTime() {
     const date = new Date();
@@ -53,6 +54,7 @@ const Footer: FunctionComponent = () => {
             <div className={styles.divider}></div>
             <div className={styles.secondaryDivider}></div>
             <div className={styles.iconWrapper}>
+              {/* TODO: make into buttons */}
               <Image
                 src='/images/icons/notepad.ico'
                 alt='notepad icon'
@@ -60,20 +62,28 @@ const Footer: FunctionComponent = () => {
                 width={20}
                 height={20}
               />
-              <Image
-                src='/images/icons/internet-explorer.ico'
-                alt='internet explorer icon'
-                className={styles.ieIcon}
-                width={20}
-                height={20}
-              />
-              <Image
-                src='/images/icons/folder.ico'
-                alt='folder icon'
-                className={styles.folderIcon}
-                width={20}
-                height={20}
-              />
+              <button
+                type='button'
+                onClick={() => { openWindow('internet-explorer-window'); addWindow('internet-explorer-window') }}>
+                <Image
+                  src='/images/icons/internet-explorer.ico'
+                  alt='internet explorer icon'
+                  className={styles.ieIcon}
+                  width={20}
+                  height={20}
+                />
+              </button>
+              <button
+                type='button'
+                onClick={() => { openWindow('my-projects-window'); addWindow('my-projects-window') }}>
+                <Image
+                  src='/images/icons/folder.ico'
+                  alt='folder icon'
+                  className={styles.folderIcon}
+                  width={20}
+                  height={20}
+                />
+              </button>
             </div>
             <div className={styles.divider}></div>
             <div className={styles.secondaryDivider}></div>
@@ -99,28 +109,30 @@ const Footer: FunctionComponent = () => {
           </div>
         </div>
       </div>
-      {isStartVisible && (
-        <div className={styles.startWindow}>
-          {startPrograms.map((program, idx) => {
-            return (
-              <div
-                key={`${program.name}-${idx}`}
-                className={styles.programWrapper}
-              >
-                <Image
-                  src={program.img.src}
-                  alt={program.img.alt}
-                  className={styles.startIcon}
-                  width={45}
-                  height={45}
-                />
-                <p className={styles.programText}>{program.name}</p>
-              </div>
-            );
-          })}
-        </div>
-      )}
-    </section>
+      {
+        isStartVisible && (
+          <div className={styles.startWindow}>
+            {startPrograms.map((program, idx) => {
+              return (
+                <div
+                  key={`${program.name}-${idx}`}
+                  className={styles.programWrapper}
+                >
+                  <Image
+                    src={program.img.src}
+                    alt={program.img.alt}
+                    className={styles.startIcon}
+                    width={45}
+                    height={45}
+                  />
+                  <p className={styles.programText}>{program.name}</p>
+                </div>
+              );
+            })}
+          </div>
+        )
+      }
+    </section >
   );
 };
 

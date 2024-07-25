@@ -2,6 +2,7 @@
 
 import { FunctionComponent, useContext } from 'react';
 import styles from './page.module.scss';
+import './page.css';
 import Application from '@/components/Application/Application';
 import { WindowsContext } from '@/components/WindowsProvider';
 import IntroModal from '@/components/IntroModal/IntroModal';
@@ -15,7 +16,7 @@ const App: FunctionComponent = () => {
 
   return (
     <main id='root' className={styles.root}>
-      <IntroModal />
+      {/* <IntroModal /> */}
       <section className={styles.screen}>
         {applications.map((app, index) => {
           const appId = app.name.replaceAll(' ', '-') + '-window';

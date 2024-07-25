@@ -1,0 +1,17 @@
+#my-projects-window {
+    div:first-child {
+        max-width: 550px;
+    }
+}
+
+#recycle-bin-window {
+    div:first-child {
+        max-width: 650px;
+    }
+}
+
+#about-me-window {
+    div:first-child {
+        max-width: 800px;
+    }
+}

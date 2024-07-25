@@ -124,7 +124,8 @@ export const renderApplicationWindows = [
             alt: 'file icon',
         }}
         title='my resume'
-        height='70vh'>
+        width='75vw'
+        height='80vh'>
         <Resume />
     </Window>,
     <Window
