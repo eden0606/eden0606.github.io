@@ -43,7 +43,7 @@ const IntroModal: FunctionComponent = () => {
                 setIsModalVisible(false);
             });
         }
-    })
+    }, [])
 
     return (
         // should be section? or article? 
