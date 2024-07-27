@@ -26,7 +26,7 @@ export interface ProjectData {
 // TODO: combine all of this data into one object
 export const projects: ProjectData[] = [
   {
-    name: 'personal website v2',
+    name: 'edenchou.com',
     date: 'spring 2024',
     tags: ['react', 'typescript', 'next', 'html/css'],
     description: 'the current site you\'re on! i wanted to revamp my personal website and had a vision to encompass the retro theme of 2000\'s microsoft software. i used next.js with react to create the frontend and hosted it on github pages (can you tell i really like github pages). i used to be a typescript hater because i loved the freedom of javascript, but i have been a recent convert. the strict typing helps more than you think when preventing runtime errors. i\'m really happy with how it turned out and i hope you enjoy it :)',
@@ -36,11 +36,6 @@ export const projects: ProjectData[] = [
       alt: 'folder icon',
     },
     github: 'https://github.com/eden0606/edenchou.com-v2',
-    // TODO: add once done with site
-    // appSnapshot: {
-    //   src: '/images/projects/personal-website-v2-snapshot.png',
-    //   alt: 'personal website v2 snapshot',
-    // }
   },
   // TODO: uncomment if you want to add this project, it's unfinished but repo exists, idk if node is relevant here
   // {
@@ -60,7 +55,7 @@ export const projects: ProjectData[] = [
     date: 'spring 2022',
     tags: ['javascript', 'html/css'],
     description: 'i took an intro to web development class my senior year so that i could get some easy project repetitions under my belt in a structured format. this was the capstone project of the course to display everything we had learned over the semester, and the goal was to a website from scratch. as a lover of travel, i created a travel site for the the 7 wonders of the world. i used vanilla js and html/css to create the frontend and hosted it on github pages. it was a fun project to work on and i enjoyed just being able to do whatever i so pleased.',
-    site: 'https://edenchou.com/the-7-wonders/index.html',
+    site: 'https://edenchou.com/the-7-wonders',
     icon: {
       src: '/images/icons/folder.ico',
       alt: 'folder icon',
@@ -121,9 +116,9 @@ export const projects: ProjectData[] = [
   {
     name: 'bot-o-mat',
     date: 'spring 2020',
-    tags: ['html/css', 'bulma', 'javascript'],
+    tags: ['html/css', 'bulma', 'javascript', 'jquery'],
     description: 'as part of a coding assessment, i created a bot-o-mat to display my knowledge of the mvc design pattern and asynchronous programming. i used vanilla js and html/css to create the frontend and hosted it on github pages. this was a fun project to work on and i learned a lot about the importance of efficient and how to effectively use asynchronous functions.',
-    site: '/',
+    site: 'https://edenchou.com/bot-o-mat',
     icon: {
       src: '/images/icons/folder.ico',
       alt: 'folder icon',
@@ -150,17 +145,28 @@ export const projects: ProjectData[] = [
     }
   },
   {
-    name: '2048',
+    name: 'twitter',
     date: 'spring 2020',
-    tags: ['html/css', 'bulma', 'javascript'],
-    description: 'as a project for my web programming class, i created a clone of the popular game 2048. it was a head-scratcher at first to understand how the game operated but was immensely gratifying once i figured it out. i used focused on implemented the mvc design pattern and utilized html/css/js to create the meat of the game. i also used the css framework, bulma, to simplify and expedite overall design process.',
-    site: '/',
+    tags: ['html/css', 'bulma', 'javascript', 'axios', 'jquery'],
+    description: 'as a project for my web programming class, i created a clone of twitter. this was my first time dealing with axios and api calls, but learned so much about it. unfortunately, the db we used to store the tweets has since been deleted so no actual tweets can be made and old tweets cannot be seen, but the code still exists! i do wish i got a screenshot of this app so you can see it in all its glory, but you can see the skeleton of what\'s left of the live site.',
+    site: 'https://edenchou.com/twitter',
     icon: {
       src: '/images/icons/folder.ico',
       alt: 'folder icon',
     },
-    // TODO: update github into its own repository 
-    github: 'https://github.com/eden0606/www-programming/tree/master/2048',
+    github: 'https://github.com/eden0606/twitter',
+  },
+  {
+    name: '2048',
+    date: 'spring 2020',
+    tags: ['html/css', 'bulma', 'javascript', 'jquery'],
+    description: 'as a project for my web programming class, i created a clone of the popular game 2048. it was a head-scratcher at first to understand how the game operated but was immensely gratifying once i figured it out. i used focused on implemented the mvc design pattern and utilized html/css/js to create the meat of the game. i also used the css framework, bulma, to simplify and expedite overall design process.',
+    site: 'https://edenchou.com/2048/',
+    icon: {
+      src: '/images/icons/folder.ico',
+      alt: 'folder icon',
+    },
+    github: 'https://github.com/eden0606/2048',
     appSnapshot: {
       src: '/images/projects/2048-snapshot.png',
       alt: '2048 snapshot',
@@ -182,18 +188,18 @@ export const projects: ProjectData[] = [
     }
   },
   {
-    name: 'personal website v1',
+    name: 'edenchou.com v1',
     date: 'spring 2019',
     tags: ['javascript', 'html/css'],
     description: 'my first ever website i made my sophomore year of college. it is a simple static site that served as a portfolio to display my projects. at the time, i was obsessed with parallax scrolling, so that was the basis for my site design. i used vanilla js and html/css for the frontend and hosted it on github pages with my own custom domain.',
-    site: 'https://eden0606.github.io/',
+    site: 'https://edenchou.com/edenchou.com-v1',
     icon: {
       src: '/images/icons/folder.ico',
       alt: 'folder icon',
     },
-    github: 'https://github.com/eden0606/personal-website-v1',
+    github: 'https://github.com/eden0606/edenchou.com-v1',
     appSnapshot: {
-      src: '/images/projects/personal-website-v1-snapshot.png',
+      src: '/images/projects/edenchou.com-v1-snapshot.png',
       alt: 'personal website v1 snapshot',
     }
   },
@@ -233,6 +239,21 @@ export const projects: ProjectData[] = [
       alt: 'ozanamsi snapshot',
     }
   },
+  {
+    name: 'ozanamsi factsheet',
+    date: 'spring 2018',
+    tags: ['adobe suite'],
+    description: 'my first stint as a graphic designer, and i mean to use that term lightly haha. i created a factsheet for the business, ozanam strategic insights, to help them with their marketing efforts as an added visual informatic. i used the adobe suite to create the graphics and layout of the factsheet.',
+    site: '/images/projects/ozanam-factsheet-snapshot.png',
+    icon: {
+      src: '/images/icons/folder.ico',
+      alt: 'folder icon',
+    },
+    appSnapshot: {
+      src: '/images/projects/ozanam-factsheet-snapshot.png',
+      alt: 'ozanamsi factsheet snapshot',
+    }
+  },
 
   // add factsheet here
 ];
@@ -251,8 +272,8 @@ export const projectCards = projects.map((project, index) => {
 
 export const renderProjectWindows = [
   <Window
-    id='personal-website-v2-window'
-    key='personal-website-v2-window'
+    id='edenchou.com-window'
+    key='edenchou.com-window'
     className='window'
     icon={{
       src: '/images/icons/folder.ico',
@@ -328,6 +349,17 @@ export const renderProjectWindows = [
     {projectCards[6]}
   </Window>,
   <Window
+    id='twitter-window'
+    key='twitter-window'
+    className='window'
+    icon={{
+      src: '/images/icons/folder.ico',
+      alt: 'folder icon',
+    }}
+    title='twitter' >
+    {projectCards[7]}
+  </Window>,
+  <Window
     id='2048-window'
     key='2048-window'
     className='window'
@@ -336,7 +368,7 @@ export const renderProjectWindows = [
       alt: 'folder icon',
     }}
     title='2048' >
-    {projectCards[7]}
+    {projectCards[8]}
   </Window>,
   <Window
     id='cs-dept-portal-window'
@@ -347,18 +379,18 @@ export const renderProjectWindows = [
       alt: 'folder icon',
     }}
     title='cs dept portal' >
-    {projectCards[8]}
+    {projectCards[9]}
   </Window>,
   <Window
-    id='personal-website-v1-window'
-    key='personal-website-v1-window'
+    id='edenchou.com-v1-window'
+    key='edenchou.com-v1-window'
     className='window'
     icon={{
       src: '/images/icons/folder.ico',
       alt: 'folder icon',
     }}
     title='personal website v1' >
-    {projectCards[9]}
+    {projectCards[10]}
   </Window>,
   <Window
     id='mind-above-matter-window'
@@ -368,7 +400,7 @@ export const renderProjectWindows = [
       alt: 'folder icon',
     }}
     title='mind above matter' >
-    {projectCards[10]}
+    {projectCards[11]}
   </Window>,
   <Window
     id='ozanamsi-window'
@@ -379,7 +411,18 @@ export const renderProjectWindows = [
       alt: 'folder icon',
     }}
     title='ozanamsi' >
-    {projectCards[11]}
+    {projectCards[12]}
+  </Window>,
+  <Window
+    id='ozanamsi-factsheet-window'
+    key='ozanamsi-factsheet- window'
+    className='window'
+    icon={{
+      src: '/images/icons/folder.ico',
+      alt: 'folder icon',
+    }}
+    title='ozanamsi factsheet' >
+    {projectCards[13]}
   </Window>
 ]
 
