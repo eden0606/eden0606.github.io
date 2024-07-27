@@ -16,7 +16,7 @@ const App: FunctionComponent = () => {
 
   return (
     <main id='root' className={styles.root}>
-      <IntroModal />
+      {/* <IntroModal /> */}
       <section className={styles.screen}>
         {applications.map((app, index) => {
           const appId = app.name.replaceAll(' ', '-') + '-window';

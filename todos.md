@@ -23,9 +23,13 @@
 - add in WIP section for projects currently working on
 - add CNAME file
 - optimize images :|
+- change timing of entry modal,,, do i even want an entry modal anymore ???
 
 ### bugs
 
 - mobile | fix drag on mobile, it's wonky..... !!!!
 - mobile | fix color of start program windows on mobile !!!!
 - mobile | fix button positioning of windows, seems a bit too low
+- mobile | entry modal glitchy
+- mobile + desktop (?) | footer doesn't reach all the way to to the end of the screen width
+- mobile | entry modal doesn't allow you to click on other things once it's done loading/if you click out of it before it's done going through all the text
