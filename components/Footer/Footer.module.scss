@@ -5,13 +5,10 @@
   width: 100vw;
   height: 40px;
   border-style: outset;
-  // does this really need to be a 5
-  // z-index: 5;
   z-index: 1;
 
   button {
     background-color: transparent;
-    border: none;
     cursor: pointer;
   }
 }
@@ -74,6 +71,10 @@
 .iconWrapper {
   display: none;
   padding: 5px 0;
+
+  button {
+    border: none;
+  }
 }
 
 .notepadIcon,
@@ -92,12 +93,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   text-wrap: nowrap;
-
-  /* only this when clicked */
-  /* border-top-color: lightgray;
-    border-left-color: lightgray;
-    border-right-color: white;
-    border-bottom-color: white; */
 }
 
 .tab:active,
@@ -134,28 +129,35 @@
   width: max-content;
 }
 
-.programWrapper {
+.programButton {
   display: flex;
   gap: 15px;
   padding: 5px 0;
+  width: 100%;
+  border: 1px outset transparent;
 }
 
-.programWrapper:first-child,
-.programWrapper:nth-child(5) {
+.programButton:first-child,
+.programButton:nth-child(5) {
   border-bottom: 1px solid darkgray;
   border-bottom-style: outset;
 }
 
-.programWrapper:hover {
-  border-style: outset;
+.programButton:hover {
+  border: 1px outset darkgray;
 }
 
-.programWrapper:active {
-  border-style: inset;
+.programButton:active {
+  border: 1px inset darkgray;
+  border-top-color: lightgray;
+  border-left-color: lightgray;
+  border-right-color: white;
+  border-bottom-color: white;
 }
 
 .programText {
   margin: auto 0;
+  font-size: 1rem;
 }
 
 @media screen and (min-width: 768px) {

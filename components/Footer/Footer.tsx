@@ -114,9 +114,16 @@ const Footer: FunctionComponent = () => {
           <div className={styles.startWindow}>
             {startPrograms.map((program, idx) => {
               return (
-                <div
+                <button
+                  type='button'
                   key={`${program.name}-${idx}`}
-                  className={styles.programWrapper}
+                  className={styles.programButton}
+                  onClick={() => {
+                    if (program.windowId && !windows.includes(program.windowId)) {
+                      openWindow(program.windowId);
+                      addWindow(program.windowId);
+                    }
+                  }}
                 >
                   <Image
                     src={program.img.src}
@@ -126,7 +133,7 @@ const Footer: FunctionComponent = () => {
                     height={45}
                   />
                   <p className={styles.programText}>{program.name}</p>
-                </div>
+                </button>
               );
             })}
           </div>

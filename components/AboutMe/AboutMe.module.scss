@@ -16,14 +16,49 @@
 
 .imgWrapper {
     text-align: center;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.heart,
+.star,
+.starMiniRight,
+.starMiniLeft {
+    //TODO: figure out a better color
+    filter: invert(47%) sepia(88%) saturate(7499%) hue-rotate(198deg) brightness(96%) contrast(100%);
 }
 
 .heart {
     position: absolute;
     width: 48px;
     height: 48px;
-    top: 40px;
-    left: 72px;
+    top: -10px;
+    left: -12px;
+}
+
+.star {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    bottom: -4px;
+    right: -2px;
+}
+
+.starMiniRight {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    bottom: 24px;
+    right: -6px;
+}
+
+.starMiniLeft {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    bottom: -3px;
+    right: 30px;
 }
 
 .img {
@@ -279,6 +314,30 @@
         //         6px 54px,
         //         6px 66px,
         //         0px 66px);
+    }
+
+    .star {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        bottom: 6px;
+        right: -2px;
+    }
+
+    .starMiniRight {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        bottom: 34px;
+        right: -7px;
+    }
+
+    .starMiniLeft {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        bottom: 5px;
+        right: 30px;
     }
 
     .content {

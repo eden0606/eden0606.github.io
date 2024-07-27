@@ -5,6 +5,7 @@ export interface StartProgramData {
     src: string;
     alt: string;
   };
+  windowId?: string;
 }
 
 export const startPrograms: StartProgramData[] = [
@@ -39,6 +40,7 @@ export const startPrograms: StartProgramData[] = [
       src: '/images/icons/documents.ico',
       alt: 'folder icon',
     },
+    windowId: 'my-projects-window',
   },
   {
     name: 'Search',

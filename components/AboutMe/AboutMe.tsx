@@ -21,6 +21,27 @@ const AboutMe: FunctionComponent = () => {
                     height={150}
                     className={styles.heart}
                 />
+                <Image
+                    src='/images/icons/star.png'
+                    alt='star icon'
+                    width={150}
+                    height={150}
+                    className={styles.star}
+                />
+                <Image
+                    src='/images/icons/star.png'
+                    alt='star icon'
+                    width={150}
+                    height={150}
+                    className={styles.starMiniRight}
+                />
+                <Image
+                    src='/images/icons/star.png'
+                    alt='star icon'
+                    width={150}
+                    height={150}
+                    className={styles.starMiniLeft}
+                />
             </div>
             <div className={styles.content}>
                 <div className={styles.about}>
