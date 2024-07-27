@@ -186,12 +186,12 @@ export const projects: ProjectData[] = [
     date: 'spring 2019',
     tags: ['javascript', 'html/css'],
     description: 'my first ever website i made my sophomore year of college. it is a simple static site that served as a portfolio to display my projects. at the time, i was obsessed with parallax scrolling, so that was the basis for my site design. i used vanilla js and html/css for the frontend and hosted it on github pages with my own custom domain.',
-    site: '/',
+    site: 'https://eden0606.github.io/',
     icon: {
       src: '/images/icons/folder.ico',
       alt: 'folder icon',
     },
-    github: 'https://github.com/eden0606/eden0606.github.io',
+    github: 'https://github.com/eden0606/personal-website-v1',
     appSnapshot: {
       src: '/images/projects/personal-website-v1-snapshot.png',
       alt: 'personal website v1 snapshot',

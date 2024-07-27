@@ -45,8 +45,8 @@ const AboutMe: FunctionComponent = () => {
             </div>
             <div className={styles.content}>
                 <div className={styles.about}>
-                    <h1>hello, i'm eden!</h1>
-                    <p>my zest for life lies in 4 main tiers: my cats, good food, traveling, and coding. full stack development is where i'm headed, but i would be remiss to not say that frontend development is my bread and butter of coding!</p></div>
+                    <h1>hello, i&apos;m eden!</h1>
+                    <p>my zest for life lies in 4 main tiers: my cats, good food, traveling, and coding. full stack development is where i&apos;m headed, but i would be remiss to not say that frontend development is my bread and butter of coding!</p></div>
                 <p className={styles.emoticon}>(⺣◡⺣)</p>
                 <div className={styles.contact}>
                     <h2>get in touch!</h2>

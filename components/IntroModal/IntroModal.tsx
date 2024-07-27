@@ -32,6 +32,7 @@ const IntroModal: FunctionComponent = () => {
             }
         }
     }
+
     useEffect(() => {
         if (document.getElementById('intro-modal-headline')) {
             startTypewriter();
@@ -42,7 +43,7 @@ const IntroModal: FunctionComponent = () => {
                 setIsModalVisible(false);
             });
         }
-    }, [])
+    })
 
     return (
         // should be section? or article? 
