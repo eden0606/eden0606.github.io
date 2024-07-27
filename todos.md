@@ -2,6 +2,8 @@
 
 ## 7/24
 
+### nice to haves
+
 - refactor all px font-size and line-height to rem
 - clean up commented code
 - remove unnecessary files
@@ -21,3 +23,9 @@
 - add in WIP section for projects currently working on
 - add CNAME file
 - optimize images :|
+
+### bugs
+
+- mobile | fix drag on mobile, it's wonky..... !!!!
+- mobile | fix color of start program windows on mobile !!!!
+- mobile | fix button positioning of windows, seems a bit too low

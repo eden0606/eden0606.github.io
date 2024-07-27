@@ -28,7 +28,7 @@ const Window: FunctionComponent<WindowProps> = ({
   ...props
 }) => {
   const [isMaximized, setIsMaximized] = useState(false);
-  const { windows, removeWindow } = useContext(WindowsContext);
+  const { removeWindow } = useContext(WindowsContext);
 
   return (
     <div {...props} id={props.id} className={`${styles.root} ${props.className}`}>

@@ -228,7 +228,7 @@ export const projects: ProjectData[] = [
   {
     name: 'ozanamsi',
     date: 'spring 2018',
-    tags: ['wix', 'html/css', 'adobe'],
+    tags: ['wix', 'html/css', 'adobe suite'],
     description: 'this was my first brush with web development if you consider wix as such. i built out this website during an internship to help the business, ozanam strategic insights, with their online presence. there was a smattering of html/css additions for custom frontend visuals and i used the adobe suite to create and edit the graphics. this site is no longer live :(',
     icon: {
       src: '/images/icons/folder.ico',
@@ -254,8 +254,6 @@ export const projects: ProjectData[] = [
       alt: 'ozanamsi factsheet snapshot',
     }
   },
-
-  // add factsheet here
 ];
 
 export const projectCards = projects.map((project, index) => {
@@ -279,7 +277,7 @@ export const renderProjectWindows = [
       src: '/images/icons/folder.ico',
       alt: 'folder icon',
     }}
-    title='personal website v2' >
+    title='edenchou.com' >
     {projectCards[0]}
   </Window>,
   <Window
@@ -389,7 +387,7 @@ export const renderProjectWindows = [
       src: '/images/icons/folder.ico',
       alt: 'folder icon',
     }}
-    title='personal website v1' >
+    title='edenchou.com v1' >
     {projectCards[10]}
   </Window>,
   <Window
@@ -415,7 +413,7 @@ export const renderProjectWindows = [
   </Window>,
   <Window
     id='ozanamsi-factsheet-window'
-    key='ozanamsi-factsheet- window'
+    key='ozanamsi-factsheet-window'
     className='window'
     icon={{
       src: '/images/icons/folder.ico',

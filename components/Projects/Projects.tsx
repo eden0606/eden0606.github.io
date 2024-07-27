@@ -34,7 +34,7 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
               className={styles.project}
               key={`project-${index}`}
               onClick={() => {
-                if (windows.includes(project.name)) return;
+                if (windows.includes(projectId)) return;
                 openWindow(projectId);
                 addWindow(projectId);
               }}
