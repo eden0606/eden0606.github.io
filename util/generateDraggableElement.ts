@@ -8,10 +8,6 @@ export default function useDragElement(element: HTMLElement | null, elementId: s
     return;
   }
 
-  console.log(element.id);
-  console.log('emement  ', element);
-
-  console.log(document.getElementById(`${elementId}-header`), 'header')
   if (document.getElementById(`${elementId}-header`)) {
     // if present, the header is where you move the DIV from:
     document.getElementById(`${elementId}-header`)!.onmousedown = dragMouseDown;
@@ -26,8 +22,6 @@ export default function useDragElement(element: HTMLElement | null, elementId: s
   }
 
   function dragMouseDown(e: MouseEvent) {
-    console.log('dragMouseDown');
-    console.log('event', e)
     e = e || window.event;
     e.preventDefault();
     // get the mouse cursor position at startup:
@@ -51,8 +45,6 @@ export default function useDragElement(element: HTMLElement | null, elementId: s
   }
 
   function dragTouchEvent(e: TouchEvent) {
-    console.log('dragMouseDown');
-    console.log('event', e)
     e = e || window.event;
     // get the mouse cursor position at startup:
     pos3 = e.touches[0].clientX;
