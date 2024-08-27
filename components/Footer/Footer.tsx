@@ -14,8 +14,10 @@ const Footer: FunctionComponent = () => {
     const date = new Date();
     const hours = date.getHours();
     const minutes = date.getMinutes();
+    console.log(hours, minutes, date);
     const amOrPm = hours < 12 ? 'AM' : 'PM';
-    setTime(`${Math.abs(12 - hours)}:${`0${minutes}`.slice(-2)} ${amOrPm}`);
+    const convertedHours = hours > 12 ? hours - 12 : hours;
+    setTime(`${convertedHours}:${`0${minutes}`.slice(-2)} ${amOrPm}`);
   }
 
   useEffect(() => {

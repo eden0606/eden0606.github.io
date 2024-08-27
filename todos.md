@@ -17,8 +17,8 @@
 - add volume functionalities
 - fix clock to update every second
 - make it so that you can minimize properly instead of just removing, so should i just remove all minimize for now?
-- ~~link all repos/wesbites~~
-- ~~make website live site~~
+- ~~link all repos/wesbites~~ | 7/27
+- ~~make website live site~~ | 7/27
 - add loader images for projects (??)
 - add in WIP section for projects currently working on
 - add CNAME file
@@ -34,4 +34,4 @@
 - mobile | entry modal glitchy
 - mobile + desktop (?) | footer doesn't reach all the way to to the end of the screen width
 - mobile | entry modal doesn't allow you to click on other things once it's done loading/if you click out of it before it's done going through all the text
-- mobile + desktop | fix time
+- ~~mobile + desktop | fix time~~ | 8/27
