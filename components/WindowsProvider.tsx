@@ -9,7 +9,7 @@ export const WindowsContext = createContext<{
     addWindow: (newWindow: string) => void;
     removeWindow: (windowToRemove: string) => void
 }>({
-    windows: [],
+    windows: ['about-me-window'],
     prevDraggedWindow: '',
     setDraggedWindow: () => { },
     addWindow: () => { },
@@ -17,7 +17,7 @@ export const WindowsContext = createContext<{
 });
 
 export const WindowsProvider = ({ children }: any) => {
-    const [windows, setWindows] = useState([] as string[]);
+    const [windows, setWindows] = useState(['about-me-window']);
     const [prevDraggedWindow, setPrevDraggedWindow] = useState('');
 
     const addWindow = (newWindow: string) => {

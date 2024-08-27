@@ -48,7 +48,7 @@
   position: relative;
   z-index: 6;
   background-color: lightgray;
-  top: -394px;
+  top: -404px;
   border: 2px lightgray outset;
 }
 
@@ -158,6 +158,7 @@
 .programText {
   margin: auto 0;
   font-size: 1rem;
+  color: black;
 }
 
 @media screen and (min-width: 768px) {

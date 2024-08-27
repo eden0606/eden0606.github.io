@@ -34,3 +34,4 @@
 - mobile | entry modal glitchy
 - mobile + desktop (?) | footer doesn't reach all the way to to the end of the screen width
 - mobile | entry modal doesn't allow you to click on other things once it's done loading/if you click out of it before it's done going through all the text
+- mobile + desktop | fix time

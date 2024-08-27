@@ -14,6 +14,7 @@
   justify-content: space-between;
   padding: 2px 0 2px 2px;
   background: linear-gradient(to right, rgb(223, 247, 255), var(--cream));
+  height: 30px;
 }
 
 .left {
@@ -31,8 +32,8 @@
 }
 
 .navWrapper {
-  width: 17px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   background-color: lightgray;
   border-style: outset;
   margin-right: 2px;
@@ -46,14 +47,14 @@
 
 .minimize {
   position: absolute;
-  top: -1px;
+  top: 2px;
   padding-left: 3px;
 }
 
 .maximize {
   position: absolute;
-  top: 2.5px;
-  margin-left: 3px;
+  top: 5px;
+  margin-left: 5px;
   border: 1px solid black;
   height: 8px;
   width: 8px;
@@ -62,9 +63,32 @@
 
 .close {
   position: absolute;
-  top: -4px;
-  padding-left: 3.5px;
+  top: -2px;
+  padding-left: 5px;
   font-size: 18px;
 }
 
-@media screen and (min-width: 1080px) {}
+@media screen and (min-width: 1080px) {
+  .header {
+    height: fit-content;
+  }
+
+  .navWrapper {
+    width: 17px;
+    height: 16px;
+  }
+
+  .minimize {
+    top: -2px;
+  }
+
+  .maximize {
+    top: 2.5px;
+    margin-left: 3px;
+  }
+
+  .close {
+    top: -4px;
+    padding-left: 3.5px;
+  }
+}

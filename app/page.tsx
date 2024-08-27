@@ -1,6 +1,6 @@
 'use client';
 
-import { FunctionComponent, useContext } from 'react';
+import { FunctionComponent, useContext, useEffect } from 'react';
 import styles from './page.module.scss';
 import './page.css';
 import Application from '@/components/Application/Application';
@@ -13,6 +13,10 @@ import { renderProjectWindows } from '@/data/projects';
 
 const App: FunctionComponent = () => {
   const { windows, addWindow } = useContext(WindowsContext);
+
+  useEffect(() => {
+    openWindow('about-me-window');
+  }, []);
 
   return (
     <main id='root' className={styles.root}>
