@@ -24,6 +24,7 @@
 - add CNAME file
 - optimize images :|
 - change timing of entry modal,,, do i even want an entry modal anymore ???
+- check site on other browsers
 
 ### bugs
 
