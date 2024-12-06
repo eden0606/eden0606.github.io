@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "util/generateWindow.tsx -- CAN DELETE"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/generateWindow.tsx -- CAN DELETE"],
   "exclude": ["node_modules"]
 }

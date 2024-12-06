@@ -2,7 +2,7 @@ import { FunctionComponent, useContext, useEffect, useState } from 'react';
 import styles from './Window.module.scss';
 import Image from 'next/image';
 import { WindowsContext } from '../WindowsProvider';
-import { closeWindow } from '@/util/operations';
+import { closeWindow } from '@/utils/operations';
 import { useOutlet } from 'react-router-dom';
 
 export interface WindowProps extends React.HTMLAttributes<HTMLDivElement> {

@@ -3,7 +3,7 @@ import styles from './Footer.module.scss';
 import Image from 'next/image';
 import { startPrograms } from '@/data/startPrograms';
 import { WindowsContext } from '../WindowsProvider';
-import { openWindow } from '@/util/operations';
+import { openWindow } from '@/utils/operations';
 
 const Footer: FunctionComponent = () => {
   const [time, setTime] = useState('');

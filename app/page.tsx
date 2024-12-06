@@ -7,7 +7,7 @@ import Application from '@/components/Application/Application';
 import { WindowsContext } from '@/components/WindowsProvider';
 import IntroModal from '@/components/IntroModal/IntroModal';
 import { applications, renderApplicationWindows } from '@/data/applications';
-import { openWindow } from '@/util/operations';
+import { openWindow } from '@/utils/operations';
 import Footer from '@/components/Footer/Footer';
 import { renderProjectWindows } from '@/data/projects';
 

@@ -2,7 +2,7 @@ import { FunctionComponent, useContext, useEffect, useState } from 'react';
 import styles from './Projects.module.scss';
 import Image from 'next/image';
 import { projects } from '@/data/projects';
-import { openWindow } from '@/util/operations';
+import { openWindow } from '@/utils/operations';
 import { WindowsContext } from '../WindowsProvider';
 
 interface ProjectsProps {

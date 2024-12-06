@@ -1,5 +1,5 @@
 import layoutStyles from '../app/page.module.scss';
-import generateDraggableElement from '@/util/generateDraggableElement';
+import generateDraggableElement from '@/utils/generateDraggableElement';
 
 
 export const openWindow = (app: string) => {

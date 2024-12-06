@@ -1,6 +1,6 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import styles from './IntroModal.module.scss';
-import { deleteTypewriter, typewriter } from '@/util/animations';
+import { deleteTypewriter, typewriter } from '@/utils/animations';
 
 const IntroModal: FunctionComponent = () => {
     const [isModalVisible, setIsModalVisible] = useState(true);

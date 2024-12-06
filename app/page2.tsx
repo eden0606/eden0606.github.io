@@ -3,7 +3,7 @@
 // import Application from '@/components/Application/Application';
 // import Footer from '@/components/Footer/Footer';
 // import Window from '@/components/Window/Window';
-// import generateDraggableElement from '@/util/generateDraggableElement';
+// import generateDraggableElement from '@/utils/generateDraggableElement';
 // import Image from 'next/image';
 // import { createContext, useContext, useEffect, useState } from 'react';
 // import styles from './page.module.css';
