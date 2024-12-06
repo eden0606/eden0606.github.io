@@ -1,3 +1,8 @@
+
+/**
+ * Deprecated drag functionality in favor of the `draggable` package.
+ */
+
 export default function useDragElement(element: HTMLElement | null, elementId: string) {
 
   let pos1 = 0,
@@ -9,12 +14,12 @@ export default function useDragElement(element: HTMLElement | null, elementId: s
   }
 
   if (document.getElementById(`${elementId}-header`)) {
-    // if present, the header is where you move the DIV from:
+    // if present, the header is where you move the DIV from
     document.getElementById(`${elementId}-header`)!.onmousedown = dragMouseDown;
     document.getElementById(`${elementId}-header`)!.ontouchstart = dragTouchEvent;
 
   } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
+    // otherwise, move the DIV from anywhere inside the DIV
     if (element?.parentElement) {
       element.parentElement.onmousedown = dragMouseDown;
       element.parentElement.ontouchstart = dragTouchEvent;
@@ -24,11 +29,11 @@ export default function useDragElement(element: HTMLElement | null, elementId: s
   function dragMouseDown(e: MouseEvent) {
     e = e || window.event;
     e.preventDefault();
-    // get the mouse cursor position at startup:
+    // get the mouse cursor position at startup
     pos3 = e.clientX;
     pos4 = e.clientY;
     document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
+    // call a function whenever the cursor moves
     document.onmousemove = elementMouseDrag;
 
     const visibleWindows = document.querySelectorAll('[window-visible]');
@@ -46,11 +51,11 @@ export default function useDragElement(element: HTMLElement | null, elementId: s
 
   function dragTouchEvent(e: TouchEvent) {
     e = e || window.event;
-    // get the mouse cursor position at startup:
+    // get the mouse cursor position at startup
     pos3 = e.touches[0].clientX;
     pos4 = e.touches[0].clientY;
     document.ontouchend = closeDragElement;
-    // call a function whenever the cursor moves:
+    // call a function whenever the cursor moves
     document.ontouchmove = elementTouchDrag;
 
     const visibleWindows = document.querySelectorAll('[window-visible]');

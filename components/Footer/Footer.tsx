@@ -1,12 +1,12 @@
-import { FunctionComponent, useContext, useEffect, useState } from 'react';
-import styles from './Footer.module.scss';
-import Image from 'next/image';
-import { startPrograms } from '@/data/startPrograms';
-import { WindowsContext } from '../WindowsProvider';
-import { openWindow } from '@/utils/operations';
+import { FunctionComponent, useContext, useEffect, useState } from "react";
+import styles from "./Footer.module.scss";
+import Image from "next/image";
+import { startPrograms } from "@/data/startPrograms";
+import { WindowsContext } from "../WindowsProvider";
+import { openWindow } from "@/utils/operations";
 
 const Footer: FunctionComponent = () => {
-  const [time, setTime] = useState('');
+  const [time, setTime] = useState("");
   const [isStartVisible, setIsStartVisible] = useState(false);
   const { windows, addWindow } = useContext(WindowsContext);
 
@@ -14,19 +14,19 @@ const Footer: FunctionComponent = () => {
     const date = new Date();
     const hours = date.getHours();
     const minutes = date.getMinutes();
-    console.log(hours, minutes, date);
-    const amOrPm = hours < 12 ? 'AM' : 'PM';
+    const amOrPm = hours < 12 ? "AM" : "PM";
     const convertedHours = hours > 12 ? hours - 12 : hours;
+
     setTime(`${convertedHours}:${`0${minutes}`.slice(-2)} ${amOrPm}`);
   }
 
   useEffect(() => {
     updateTime();
     setInterval(updateTime, 60000);
-    if (document.getElementsByTagName('body')) {
-      document.body.addEventListener('click', (e) => {
+    if (document.getElementsByTagName("body")) {
+      document.body.addEventListener("click", (e) => {
         const clickedEl = e.target as HTMLElement;
-        if (!clickedEl.className.includes('Footer')) {
+        if (!clickedEl.className.includes("Footer")) {
           setIsStartVisible(false);
         }
       });
@@ -45,8 +45,8 @@ const Footer: FunctionComponent = () => {
               }}
             >
               <Image
-                src='/images/icons/start.ico'
-                alt='start icon'
+                src="/images/icons/start.ico"
+                alt="start icon"
                 className={styles.startIcon}
                 width={20}
                 height={20}
@@ -58,29 +58,37 @@ const Footer: FunctionComponent = () => {
             <div className={styles.iconWrapper}>
               {/* TODO: make into buttons */}
               <Image
-                src='/images/icons/notepad.ico'
-                alt='notepad icon'
+                src="/images/icons/notepad.ico"
+                alt="notepad icon"
                 className={styles.notepadIcon}
                 width={20}
                 height={20}
               />
               <button
-                type='button'
-                onClick={() => { openWindow('internet-explorer-window'); addWindow('internet-explorer-window') }}>
+                type="button"
+                onClick={() => {
+                  openWindow("internet-explorer-window");
+                  addWindow("internet-explorer-window");
+                }}
+              >
                 <Image
-                  src='/images/icons/internet-explorer.ico'
-                  alt='internet explorer icon'
+                  src="/images/icons/internet-explorer.ico"
+                  alt="internet explorer icon"
                   className={styles.ieIcon}
                   width={20}
                   height={20}
                 />
               </button>
               <button
-                type='button'
-                onClick={() => { openWindow('my-projects-window'); addWindow('my-projects-window') }}>
+                type="button"
+                onClick={() => {
+                  openWindow("my-projects-window");
+                  addWindow("my-projects-window");
+                }}
+              >
                 <Image
-                  src='/images/icons/folder.ico'
-                  alt='folder icon'
+                  src="/images/icons/folder.ico"
+                  alt="folder icon"
                   className={styles.folderIcon}
                   width={20}
                   height={20}
@@ -92,7 +100,7 @@ const Footer: FunctionComponent = () => {
             {windows.map((window) => {
               return (
                 <div className={styles.tab} key={window}>
-                  {window.replaceAll('-', ' ').replace('window', '')}
+                  {window.replaceAll("-", " ").replace("window", "")}
                 </div>
               );
             })}
@@ -100,8 +108,8 @@ const Footer: FunctionComponent = () => {
           <div className={styles.right}>
             <div className={styles.time}>
               <Image
-                src='/images/icons/volume.ico'
-                alt='volume icon'
+                src="/images/icons/volume.ico"
+                alt="volume icon"
                 className={styles.volumeIcon}
                 width={20}
                 height={20}
@@ -111,37 +119,35 @@ const Footer: FunctionComponent = () => {
           </div>
         </div>
       </div>
-      {
-        isStartVisible && (
-          <div className={styles.startWindow}>
-            {startPrograms.map((program, idx) => {
-              return (
-                <button
-                  type='button'
-                  key={`${program.name}-${idx}`}
-                  className={styles.programButton}
-                  onClick={() => {
-                    if (program.windowId && !windows.includes(program.windowId)) {
-                      openWindow(program.windowId);
-                      addWindow(program.windowId);
-                    }
-                  }}
-                >
-                  <Image
-                    src={program.img.src}
-                    alt={program.img.alt}
-                    className={styles.startIcon}
-                    width={45}
-                    height={45}
-                  />
-                  <p className={styles.programText}>{program.name}</p>
-                </button>
-              );
-            })}
-          </div>
-        )
-      }
-    </section >
+      {isStartVisible && (
+        <div className={styles.startWindow}>
+          {startPrograms.map((program, idx) => {
+            return (
+              <button
+                type="button"
+                key={`${program.name}-${idx}`}
+                className={styles.programButton}
+                onClick={() => {
+                  if (program.windowId && !windows.includes(program.windowId)) {
+                    openWindow(program.windowId);
+                    addWindow(program.windowId);
+                  }
+                }}
+              >
+                <Image
+                  src={program.img.src}
+                  alt={program.img.alt}
+                  className={styles.startIcon}
+                  width={45}
+                  height={45}
+                />
+                <p className={styles.programText}>{program.name}</p>
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </section>
   );
 };
 
